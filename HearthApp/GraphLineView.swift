@@ -62,7 +62,7 @@ class GraphLineView : LineChartView {
         self.data?.setDrawValues(false)
         
         //Settings minimun zoom
-        self.viewPortHandler.setMaximumScaleX((CGFloat(xData.count/5)))
+        self.viewPortHandler.setMaximumScaleX((CGFloat(xData.count/3)))
     }
     
     func importFormattedData(xData: [String], yData: [Int]) {
@@ -101,7 +101,8 @@ class GraphLineView : LineChartView {
         dataSet.circleHoleColor = NSUIColor.black
         dataSet.circleHoleRadius = 1.5
         dataSet.circleRadius = 2.5
-
+        
+        dataSet.valueFont = UIFont.init(name: "Oswald-Medium", size: 10)!
         
         //setGradientEffect(dataSet: dataSet)
     }
@@ -128,12 +129,14 @@ class GraphLineView : LineChartView {
         self.rightAxis.drawLimitLinesBehindDataEnabled = false
         self.rightAxis.drawLabelsEnabled = false
         self.rightAxis.labelTextColor = UIColor.lightGray
+        self.rightAxis.labelFont = UIFont.init(name: "Oswald-Medium", size: 10)!
         
         self.leftAxis.removeAllLimitLines()
         self.leftAxis.drawAxisLineEnabled = false
         self.leftAxis.drawGridLinesEnabled = false
         self.leftAxis.drawBottomYLabelEntryEnabled = false
         self.leftAxis.labelTextColor = UIColor.lightGray
+        self.leftAxis.labelFont = UIFont.init(name: "Oswald-Medium", size: 10)!
         
         self.xAxis.drawAxisLineEnabled = false
         self.xAxis.drawGridLinesEnabled = false
@@ -141,16 +144,17 @@ class GraphLineView : LineChartView {
         self.xAxis.labelPosition = .bottom
         self.xAxis.granularity = Double(granularity)
         self.xAxis.labelTextColor = UIColor.lightGray
+        self.xAxis.labelFont = UIFont.init(name: "Oswald-Medium", size: 10)!
         
         self.alpha = alpha
         
-        self.xAxis.avoidFirstLastClippingEnabled = true
+        self.xAxis.avoidFirstLastClippingEnabled = false
         
         //self.zoom(scaleX: 2, scaleY: 0, x: 0, y: 0)
         
         //self.viewPortHandler.setMaximumScaleX((CGFloat(xData.count/5)))
         
-        self.zoomToCenter(scaleX: 3, scaleY: 0)
+        self.zoomToCenter(scaleX: 6, scaleY: 0)
     }
     
     private func setGradientEffect(dataSet: LineChartDataSet) {

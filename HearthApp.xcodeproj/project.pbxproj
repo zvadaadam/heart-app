@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A605A274CD2BEE172352D5A3 /* Pods_HearthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */; };
 		C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509978F1F1E93DB0073F600 /* GraphLineView.swift */; };
+		C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53847641F2BEDF7006B7711 /* CalendarDate.swift */; };
+		C54BABDB1F28E0DF00E47341 /* oswald in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDA1F28E0DF00E47341 /* oswald */; };
+		C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */; };
 		C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55101A91F238F6600B2EC8A /* CurrentRateView.swift */; };
 		C55101AC1F2390F300B2EC8A /* CurrentRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55101AB1F2390F300B2EC8A /* CurrentRateView.xib */; };
 		C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5642EEC1F1AC58B005363A0 /* AuthProvider.swift */; };
@@ -28,6 +31,12 @@
 		C58C41501F19871400507911 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C414F1F19871400507911 /* LaunchViewController.swift */; };
 		C58C41521F19878700507911 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C41511F19878700507911 /* LoginViewController.swift */; };
 		C58C41541F19879C00507911 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C41531F19879C00507911 /* SignUpViewController.swift */; };
+		C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591C1841F2A2BB600F9E448 /* CalendarCollectionViewCell.swift */; };
+		C591C1871F2A2BB600F9E448 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */; };
+		C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */; };
+		C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591C18B1F2A2FA400F9E448 /* CalendarModel.swift */; };
+		C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */; };
+		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +82,9 @@
 		5D87F07F2F2BC3861FFCFD78 /* Pods-HearthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthApp/Pods-HearthApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C509978F1F1E93DB0073F600 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
+		C53847641F2BEDF7006B7711 /* CalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		C54BABDA1F28E0DF00E47341 /* oswald */ = {isa = PBXFileReference; lastKnownFileType = folder; path = oswald; sourceTree = "<group>"; };
+		C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Medium.ttf"; path = "HearthApp/oswald/Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		C55101A91F238F6600B2EC8A /* CurrentRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRateView.swift; sourceTree = "<group>"; };
 		C55101AB1F2390F300B2EC8A /* CurrentRateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentRateView.xib; sourceTree = "<group>"; };
 		C5642EEC1F1AC58B005363A0 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
@@ -93,6 +105,12 @@
 		C58C414F1F19871400507911 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C58C41511F19878700507911 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C58C41531F19879C00507911 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C591C1841F2A2BB600F9E448 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCollectionDelegate.swift; sourceTree = "<group>"; };
+		C591C18B1F2A2FA400F9E448 /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodayCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +135,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C54BABE31F290B7F00E47341 /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				C509978F1F1E93DB0073F600 /* GraphLineView.swift */,
+			);
+			name = graph;
+			sourceTree = "<group>";
+		};
 		C55101A51F1F91A700B2EC8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C591C18A1F2A2F9300F9E448 /* calendar */,
 				C5642EEB1F1AC4DD005363A0 /* authantication */,
 				C5642EF71F1BC175005363A0 /* databse */,
 			);
@@ -129,7 +156,7 @@
 		C55101A61F1F91B100B2EC8A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C509978F1F1E93DB0073F600 /* GraphLineView.swift */,
+				C54BABE31F290B7F00E47341 /* graph */,
 				C55101A91F238F6600B2EC8A /* CurrentRateView.swift */,
 				C55101AB1F2390F300B2EC8A /* CurrentRateView.xib */,
 			);
@@ -174,6 +201,7 @@
 		C58C412C1F1950E900507911 = {
 			isa = PBXGroup;
 			children = (
+				C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */,
 				C58C41371F1950EA00507911 /* HearthApp */,
 				C58C41361F1950EA00507911 /* Products */,
 				4F768A7FAFCD7EDF4F639995 /* Pods */,
@@ -202,6 +230,7 @@
 				C58C41411F1950EA00507911 /* LaunchScreen.storyboard */,
 				C58C41441F1950EA00507911 /* Info.plist */,
 				C58C414A1F19550D00507911 /* GoogleService-Info.plist */,
+				C54BABDA1F28E0DF00E47341 /* oswald */,
 				C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */,
 			);
 			path = HearthApp;
@@ -210,13 +239,35 @@
 		C58C414E1F1986E000507911 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C591C1831F2A09EA00F9E448 /* main */,
 				C58C414F1F19871400507911 /* LaunchViewController.swift */,
 				C58C41511F19878700507911 /* LoginViewController.swift */,
 				C58C41531F19879C00507911 /* SignUpViewController.swift */,
 				C5642EF51F1B93C5005363A0 /* FriendsTableViewController.swift */,
-				C5642F051F1D3C16005363A0 /* GraphViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C591C1831F2A09EA00F9E448 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				C5642F051F1D3C16005363A0 /* GraphViewController.swift */,
+				C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */,
+				C591C1841F2A2BB600F9E448 /* CalendarCollectionViewCell.swift */,
+				C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */,
+				C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */,
+				C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		C591C18A1F2A2F9300F9E448 /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+				C591C18B1F2A2FA400F9E448 /* CalendarModel.swift */,
+				C53847641F2BEDF7006B7711 /* CalendarDate.swift */,
+			);
+			name = calendar;
 			sourceTree = "<group>";
 		};
 		D3CA6571EA7DD8FAF592DCE0 /* Frameworks */ = {
@@ -314,10 +365,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C591C1871F2A2BB600F9E448 /* CalendarCollectionViewCell.xib in Resources */,
 				C58C41431F1950EA00507911 /* LaunchScreen.storyboard in Resources */,
 				C58C414B1F19550D00507911 /* GoogleService-Info.plist in Resources */,
+				C54BABDB1F28E0DF00E47341 /* oswald in Resources */,
+				C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */,
 				C58C41401F1950EA00507911 /* Assets.xcassets in Resources */,
 				C58C413E1F1950EA00507911 /* Main.storyboard in Resources */,
+				C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */,
 				C55101AC1F2390F300B2EC8A /* CurrentRateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,13 +435,18 @@
 				C5642EF01F1B7A03005363A0 /* AuthError.swift in Sources */,
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
+				C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */,
+				C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */,
 				C5642EF61F1B93C5005363A0 /* FriendsTableViewController.swift in Sources */,
 				C5642EF21F1B7A3D005363A0 /* ViewConstants.swift in Sources */,
+				C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */,
 				C58C41501F19871400507911 /* LaunchViewController.swift in Sources */,
 				C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */,
 				C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */,
+				C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */,
 				C5642F061F1D3C16005363A0 /* GraphViewController.swift in Sources */,
 				C58C41541F19879C00507911 /* SignUpViewController.swift in Sources */,
+				C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */,
 				C5642EF41F1B7A76005363A0 /* Constants.swift in Sources */,
 				C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */,
 				C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */,

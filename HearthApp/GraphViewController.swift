@@ -12,18 +12,25 @@ import Charts
 
 class GraphViewController : UIViewController, ChartViewDelegate {
     
+    @IBOutlet weak var curRate: UILabel!
+    
+    @IBOutlet weak var curUser: UILabel!
+    
     @IBOutlet weak var currentRate: CurrentRateView!
     
     @IBOutlet weak var graphView: GraphLineView!
     
-    @IBOutlet weak var friendsCollection: UICollectionView!
+    @IBOutlet weak var calendar: UICollectionView!
     
     var counter = 0
-    
     let sampleFrequency = 5;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        calendar.register(UINib(nibName: "CalendarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CalendarCell")
+        
+        calendar.register(UINib(nibName: "CalendarTodayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CalendarCellToday")
         
         graphView.delegate = self
         
@@ -33,23 +40,25 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         
         let data1 = createMockData()
         graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
-    }
-    
-    
- 
-    func chartTranslated(_ chartView: ChartViewBase, dX: CGFloat, dY: CGFloat) {
-        //print("HELLO")
+        
+        let data2 = createMockData()
+        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
+        
+        let data3 = createMockData()
+        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry.y)
+        //let dataSet = chartView.data?.dataSets[highlight.dataSetIndex]
+        //let colors = dataSet?.colors
+        //currentRate.changeRateValue(rate: Int(entry.y), colorRing: (colors?.first)!)
         
-        let dataSet = chartView.data?.dataSets[highlight.dataSetIndex]
-        let colors = dataSet?.colors
+        curRate.fadeTransition(0.6)
+        curRate.text = String(Int(entry.y))
+    
+        //curUser.text = String(describing: colors?.first)
         
-        currentRate.changeRateValue(rate: Int(entry.y), colorRing: (colors?.first)!)
-        
-        //graphView.highlightValue(highlight)
+        graphView.highlightValue(highlight)
     }
  
     
@@ -72,5 +81,16 @@ class GraphViewController : UIViewController, ChartViewDelegate {
     }
     
     
+}
+
+extension UIView {
+    func fadeTransition(_ duration:CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name:
+            kCAMediaTimingFunctionEaseInEaseOut)
+        animation.type = kCATransitionFade
+        animation.duration = duration
+        layer.add(animation, forKey: kCATransitionFade)
+    }
 }
 
