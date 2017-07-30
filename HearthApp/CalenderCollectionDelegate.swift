@@ -16,17 +16,26 @@ extension GraphViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        print(calendarModel.getDaysFromRegistration())
+        return calendarModel.getDaysFromRegistration()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        print(indexPath.item)
         var cell : UICollectionViewCell? = nil
         if indexPath.item != 0 {
-            cell = calendar.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCollectionViewCell
-            (cell as! CalendarCollectionViewCell).setDayLabel(day: "30", month: "JUN")
+            let reuseCell = calendar.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCollectionViewCell
+            let dayCalendar = calendarModel.subtractDaysFromCurrent(days: indexPath.item)
+            reuseCell.setDayLabel(day: String(dayCalendar.day), month: dayCalendar.getMonthStr())
+            reuseCell.fillCircle = UIColor.clear.cgColor
+            
+            (indexPath.item == calendarModel.selectedItem ? reuseCell.selectCell() : reuseCell.unselectCell())
+            
+            cell = reuseCell
         } else {
-            cell = calendar.dequeueReusableCell(withReuseIdentifier: "CalendarCellToday", for: indexPath) as! CalendarTodayCollectionViewCell
+            let reuseCell = calendar.dequeueReusableCell(withReuseIdentifier: "CalendarCellToday", for: indexPath) as! CalendarTodayCollectionViewCell
+            (indexPath.item == calendarModel.selectedItem ? reuseCell.selectToday() : reuseCell.unselectToday())
+            cell = reuseCell
         }
         
         
@@ -34,6 +43,20 @@ extension GraphViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard indexPath.item != calendarModel.selectedItem else {
+            return
+        }
+        
+        calendarModel.selectItemAt(index: indexPath.item)
+        calendar.reloadData()
+        
+        let date = calendarModel.subtractDaysFromCurrent(days: indexPath.item)
+        print(String(date.day) + "-" + date.getMonthStr() + "-" + String(date.year))
+        
+        getGraphOf(index: indexPath.item)
+    }
     
     
 }

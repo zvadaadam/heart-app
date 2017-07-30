@@ -32,6 +32,9 @@
                     </label>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="today" destination="1aT-Ac-QV4" id="8Ta-xh-W4N"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

@@ -22,6 +22,8 @@ class GraphViewController : UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var calendar: UICollectionView!
     
+    var calendarModel: CalendarModel = CalendarModel()
+    
     var counter = 0
     let sampleFrequency = 5;
     
@@ -48,6 +50,23 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
     }
     
+    func getGraphOf(index: Int) {
+        graphView.clear()
+        
+        let data = createMockData()
+        graphView.createLine(xData: data.x, yData: data.y, color: .red)
+        
+        let data1 = createMockData()
+        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
+
+        let data2 = createMockData()
+        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
+        
+        let data3 = createMockData()
+        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
+
+    }
+    
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         //let dataSet = chartView.data?.dataSets[highlight.dataSetIndex]
         //let colors = dataSet?.colors
@@ -60,7 +79,7 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         
         graphView.highlightValue(highlight)
     }
- 
+    
     
     func createMockData() -> (x: [Int], y: [Int]) {
         

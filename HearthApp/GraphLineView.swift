@@ -13,7 +13,7 @@ import Charts
 class GraphLineView : LineChartView {
     
     let granularity = 1
-    let widthLine = 1
+    let widthLine = 1.5
     let aplha = 1
     
     
@@ -37,6 +37,8 @@ class GraphLineView : LineChartView {
     }
     
     func createLine(xData: [Int], yData: [Int], color: NSUIColor) {
+        
+        self.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeInCubic)
         
         var data : [ChartDataEntry] = []
         var timeData : [String] = []
@@ -95,22 +97,24 @@ class GraphLineView : LineChartView {
         dataSet.setColor(color)
         dataSet.lineWidth = CGFloat(widthLine)
         dataSet.drawCirclesEnabled = true
-        dataSet.drawCircleHoleEnabled = false
+        dataSet.drawCircleHoleEnabled = true
         dataSet.drawIconsEnabled = false
         dataSet.circleColors = [color]
         dataSet.circleHoleColor = NSUIColor.black
-        dataSet.circleHoleRadius = 1.5
-        dataSet.circleRadius = 2.5
+        dataSet.circleHoleRadius = 2
+        dataSet.circleRadius = 3
         
         dataSet.valueFont = UIFont.init(name: "Oswald-Medium", size: 10)!
         
-        //setGradientEffect(dataSet: dataSet)
+        dataSet.highlightEnabled = true
+        dataSet.highlightColor = .gray
+        dataSet.fillAlpha = 2
+        
+        //setGradientEffect(dataSet: dataSet, color: color)
     }
     
     private func setGraphParam() {
         self.noDataText = "No data provided"
-        
-        self.animate(xAxisDuration: 1.5, yAxisDuration: 1.0, easingOption: .easeInCubic)
         
         //turn off vertical zoom
         self.scaleYEnabled = false
@@ -120,6 +124,8 @@ class GraphLineView : LineChartView {
         self.chartDescription?.text? = ""
         
         self.dragEnabled = true
+        
+        self.sizeToFit()
         
         self.rightAxis.removeAllLimitLines()
         self.rightAxis.drawAxisLineEnabled = false
@@ -133,7 +139,9 @@ class GraphLineView : LineChartView {
         
         self.leftAxis.removeAllLimitLines()
         self.leftAxis.drawAxisLineEnabled = false
-        self.leftAxis.drawGridLinesEnabled = false
+        self.leftAxis.drawGridLinesEnabled = true
+        self.leftAxis.gridLineCap = CGLineCap.round
+        self.leftAxis.gridLineWidth = 0.3
         self.leftAxis.drawBottomYLabelEntryEnabled = false
         self.leftAxis.labelTextColor = UIColor.lightGray
         self.leftAxis.labelFont = UIFont.init(name: "Oswald-Medium", size: 10)!
@@ -157,9 +165,9 @@ class GraphLineView : LineChartView {
         self.zoomToCenter(scaleX: 6, scaleY: 0)
     }
     
-    private func setGradientEffect(dataSet: LineChartDataSet) {
+    private func setGradientEffect(dataSet: LineChartDataSet, color: UIColor) {
         dataSet.drawFilledEnabled = true
-        let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor, ChartColorTemplates.colorFromString("#ffff0000").cgColor] as CFArray
+        let gradientColors = [color.cgColor, ChartColorTemplates.colorFromString("#ffff0000").cgColor] as CFArray
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)
         dataSet.fillAlpha = 1
         dataSet.fill = Fill.fillWithLinearGradient(gradient!, angle: 90)
