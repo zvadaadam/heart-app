@@ -35,6 +35,9 @@
 		C591C1871F2A2BB600F9E448 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */; };
 		C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */; };
 		C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591C18B1F2A2FA400F9E448 /* CalendarModel.swift */; };
+		C592ED181F337E4C00902383 /* FriendsSelectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C592ED171F337E4C00902383 /* FriendsSelectedView.xib */; };
+		C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */; };
+		C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */; };
 		C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */; };
 		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -109,6 +112,9 @@
 		C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCollectionDelegate.swift; sourceTree = "<group>"; };
 		C591C18B1F2A2FA400F9E448 /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		C592ED171F337E4C00902383 /* FriendsSelectedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsSelectedView.xib; sourceTree = "<group>"; };
+		C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsSelectedView.swift; sourceTree = "<group>"; };
+		C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodayCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +165,8 @@
 				C54BABE31F290B7F00E47341 /* graph */,
 				C55101A91F238F6600B2EC8A /* CurrentRateView.swift */,
 				C55101AB1F2390F300B2EC8A /* CurrentRateView.xib */,
+				C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */,
+				C592ED171F337E4C00902383 /* FriendsSelectedView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 		C58C41371F1950EA00507911 /* HearthApp */ = {
 			isa = PBXGroup;
 			children = (
+				C592ED1C1F33C31100902383 /* Utils */,
 				C58C414E1F1986E000507911 /* Controllers */,
 				C55101A61F1F91B100B2EC8A /* View */,
 				C55101A51F1F91A700B2EC8A /* Model */,
@@ -268,6 +277,14 @@
 				C53847641F2BEDF7006B7711 /* CalendarDate.swift */,
 			);
 			name = calendar;
+			sourceTree = "<group>";
+		};
+		C592ED1C1F33C31100902383 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		D3CA6571EA7DD8FAF592DCE0 /* Frameworks */ = {
@@ -374,6 +391,7 @@
 				C58C413E1F1950EA00507911 /* Main.storyboard in Resources */,
 				C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */,
 				C55101AC1F2390F300B2EC8A /* CurrentRateView.xib in Resources */,
+				C592ED181F337E4C00902383 /* FriendsSelectedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +452,7 @@
 			files = (
 				C5642EF01F1B7A03005363A0 /* AuthError.swift in Sources */,
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
+				C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
 				C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */,
 				C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */,
@@ -441,6 +460,7 @@
 				C5642EF21F1B7A3D005363A0 /* ViewConstants.swift in Sources */,
 				C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */,
 				C58C41501F19871400507911 /* LaunchViewController.swift in Sources */,
+				C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */,
 				C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */,
 				C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */,
 				C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */,

@@ -24,6 +24,8 @@ class GraphViewController : UIViewController, ChartViewDelegate {
     
     var calendarModel: CalendarModel = CalendarModel()
     
+    var profileUsers: [FriendsSelectedView] = []
+    
     var counter = 0
     let sampleFrequency = 5;
     
@@ -48,6 +50,11 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         
         let data3 = createMockData()
         graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
+        
+        
+        let user : [(String, UIColor)] = [("ADAM", .red), ("TERI", .blue), ("SEMOUS", .white), ("BORISLAV", .yellow)]
+        
+        setUserProfiles(users: user);
     }
     
     func getGraphOf(index: Int) {
@@ -80,6 +87,25 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         graphView.highlightValue(highlight)
     }
     
+    func setUserProfiles(users: [(name: String, color: UIColor)]) {
+        
+        let numberOfProfiles = users.count
+        let profileViewSize : CGFloat = FriendsSelectedView.size
+        
+        let offset : CGFloat = profileViewSize/2
+        let separatorSize : CGFloat = view.bounds.width/CGFloat(numberOfProfiles + 1)
+        
+        let profileHeight : CGFloat = view.bounds.height - profileViewSize
+        
+        for i in 0 ..< numberOfProfiles {
+            let x = CGFloat(i+1)*separatorSize-offset
+            let friend = FriendsSelectedView(frame: CGRect(x: x, y: profileHeight, width: profileViewSize, height: profileViewSize))
+            friend.setColor(color: users[i].color)
+            friend.setName(name: users[i].name)
+            self.view.addSubview(friend)
+            profileUsers.append(friend)
+        }
+    }
     
     func createMockData() -> (x: [Int], y: [Int]) {
         
