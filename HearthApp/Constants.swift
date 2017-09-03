@@ -10,6 +10,46 @@ import Foundation
 
 struct Constants {
     
+    static let DB_URL = "https://hearthapp-85f80.firebaseio.com/"
+    static let STORAGE_URL = "gs://hearthapp-85f80.appspot.com"
     
+    static let USER = "user"
+    static let FRIENDS = "friend"
+    static let PROFILE = "profile"
+    static let HEART = "heart"
+    
+    struct DatabaseEntities {
+        static let USER = "user"
+        static let FRIENDS = "friend"
+        static let PROFILE = "profile"
+        static let HEART = "heart"
+    }
+    
+    struct User {
+        static let FIRST_NAME = "firstname"
+        static let SURNAME = "surname"
+        static let USERNAME = "username"
+        static let UID = "uid"
+        static let EMAIL = "email"
+        static let FRIENDS = "friends"
+    }
+    
+    struct Controllers {
+        static let LOGIN = "LoginViewController"
+        static let SIGN_UP = "SignUpViewController"
+        static let PROFILE = "ProfileViewController"
+        static let SELECT_FRIENDS = "SelectFriendsViewController"
+        static let ADD_FRIENDS = "AddFriendsViewController"
+        static let GRAPH = "GraphViewController"
+    }
+    
+    struct Storyboards {
+        static let LOGIN = "SignIn"
+        static let SIGN_UP = "SignUp"
+        static let GRAPH = "Main"
+        static let PROFILE = "Profile"
+        static let SELECT_FRIENDS = "SelectFriends"
+        static let ADD_FRIENDS = "AddFriends"
+    }
     
 }

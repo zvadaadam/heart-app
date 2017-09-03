@@ -12,38 +12,41 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailField: CustomTextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        
+        setTextFieldsTargetNotEmpty()
     }
     
     
     
     @IBAction func signupTapped(_ sender: Any) {
-        let VC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        
-        self.present(VC, animated: true, completion: nil)
-
+        PresentStoryboard.sharedInstance.showSignUp(vc: self)
     }
     
-    @IBAction func loginTapped(_ sender: Any) {
-        let username = usernameField.text
-        let password = passwordField.text
+    func loginTapped() {
         
-        if username != "" && password != "" {
-            AuthProvider.getInstance.login(email: username!, password: password!, loginHandler: { (msg) in
-                if msg != nil {
-                    self.alertUser(title: "Login", msg: msg)
-                } else {
-                    print("LOGIN SUCSESS")
+        if let email = emailField.text, let password = passwordField.text {
+            if email != "" && password != "" {
+                AuthProvider.getInstance.login(email: email, password: password, loginHandler: { (msg) in
+                    if msg != nil {
+                        self.alertUser(title: "Login", msg: msg)
+                    } else {
+                        print("LOGIN SUCSESS")
 
-                    self.performSegue(withIdentifier: ViewConstants.FRIEND_SEGUE, sender: nil)
-                }
-            })
-        } else {
+                        PresentStoryboard.sharedInstance.showProfile(vc: self)
+                    }
+                })
+            } else {
             
+            }
         }
     }
     
@@ -56,5 +59,21 @@ class LoginViewController: UIViewController {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-
+    
+    private func setTextFieldsTargetNotEmpty() {
+        loginButton.disable()
+        
+        emailField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        passwordField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+    
+    }
+    
+    @objc private func textFieldsIsNotEmpty() {
+        guard let email = emailField.text, !email.isEmpty, email != emailField.placeholder,
+            let password = passwordField.text, !password.isEmpty, password != passwordField.placeholder else {
+                return
+        }
+        
+        loginButton.enable()
+    }
 }

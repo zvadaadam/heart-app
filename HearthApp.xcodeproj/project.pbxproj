@@ -10,6 +10,14 @@
 		A605A274CD2BEE172352D5A3 /* Pods_HearthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */; };
 		C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509978F1F1E93DB0073F600 /* GraphLineView.swift */; };
 		C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53847641F2BEDF7006B7711 /* CalendarDate.swift */; };
+		C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */; };
+		C53AC7BE1F574AA30067B8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7BD1F574AA30067B8F8 /* User.swift */; };
+		C53AC7C01F574BCC0067B8F8 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */; };
+		C53AC7C21F574DC60067B8F8 /* FriendsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */; };
+		C53AC7CB1F5986B70067B8F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7CA1F5986B70067B8F8 /* ProfileViewController.swift */; };
+		C53AC7CD1F5B45FC0067B8F8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */; };
+		C53AC7CF1F5B46430067B8F8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */; };
+		C53AC7D11F5B4F1F0067B8F8 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C53AC7D01F5B4F070067B8F8 /* Oswald-Light.ttf */; };
 		C54BABDB1F28E0DF00E47341 /* oswald in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDA1F28E0DF00E47341 /* oswald */; };
 		C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */; };
 		C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55101A91F238F6600B2EC8A /* CurrentRateView.swift */; };
@@ -24,7 +32,6 @@
 		C5642F0A1F1D3D1B005363A0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5642F001F1D391E005363A0 /* Charts.framework */; };
 		C5642F0B1F1D3D1B005363A0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5642F001F1D391E005363A0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C41381F1950EA00507911 /* AppDelegate.swift */; };
-		C58C413E1F1950EA00507911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58C413C1F1950EA00507911 /* Main.storyboard */; };
 		C58C41401F1950EA00507911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58C413F1F1950EA00507911 /* Assets.xcassets */; };
 		C58C41431F1950EA00507911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58C41411F1950EA00507911 /* LaunchScreen.storyboard */; };
 		C58C414B1F19550D00507911 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C58C414A1F19550D00507911 /* GoogleService-Info.plist */; };
@@ -38,6 +45,15 @@
 		C592ED181F337E4C00902383 /* FriendsSelectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C592ED171F337E4C00902383 /* FriendsSelectedView.xib */; };
 		C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */; };
 		C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */; };
+		C592ED261F38CE3400902383 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592ED251F38CE3400902383 /* AddFriendViewController.swift */; };
+		C596C01F1F5C261B00004DF6 /* AddFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C01E1F5C261B00004DF6 /* AddFriends.storyboard */; };
+		C596C0211F5C262000004DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C0201F5C262000004DF6 /* Main.storyboard */; };
+		C596C0231F5C262400004DF6 /* SelectFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C0221F5C262400004DF6 /* SelectFriends.storyboard */; };
+		C596C0251F5C262800004DF6 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C0241F5C262800004DF6 /* SignIn.storyboard */; };
+		C596C0271F5C262C00004DF6 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C0261F5C262C00004DF6 /* SignUp.storyboard */; };
+		C596C0291F5C28D200004DF6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C596C0281F5C28D200004DF6 /* Profile.storyboard */; };
+		C596C02B1F5C39D600004DF6 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C02A1F5C39D600004DF6 /* UIButton+Extension.swift */; };
+		C596C02F1F5C411B00004DF6 /* PresentStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C02E1F5C411B00004DF6 /* PresentStoryboard.swift */; };
 		C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */; };
 		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -86,6 +102,14 @@
 		5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C509978F1F1E93DB0073F600 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
 		C53847641F2BEDF7006B7711 /* CalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
+		C53AC7BD1F574AA30067B8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
+		C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHandler.swift; sourceTree = "<group>"; };
+		C53AC7CA1F5986B70067B8F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		C53AC7D01F5B4F070067B8F8 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		C54BABDA1F28E0DF00E47341 /* oswald */ = {isa = PBXFileReference; lastKnownFileType = folder; path = oswald; sourceTree = "<group>"; };
 		C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Medium.ttf"; path = "HearthApp/oswald/Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		C55101A91F238F6600B2EC8A /* CurrentRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRateView.swift; sourceTree = "<group>"; };
@@ -100,7 +124,6 @@
 		C5642F051F1D3C16005363A0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		C58C41351F1950EA00507911 /* HearthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58C41381F1950EA00507911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C58C413D1F1950EA00507911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C58C413F1F1950EA00507911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C58C41421F1950EA00507911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C58C41441F1950EA00507911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +138,15 @@
 		C592ED171F337E4C00902383 /* FriendsSelectedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsSelectedView.xib; sourceTree = "<group>"; };
 		C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsSelectedView.swift; sourceTree = "<group>"; };
 		C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		C592ED251F38CE3400902383 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		C596C01E1F5C261B00004DF6 /* AddFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFriends.storyboard; sourceTree = "<group>"; };
+		C596C0201F5C262000004DF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C596C0221F5C262400004DF6 /* SelectFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectFriends.storyboard; sourceTree = "<group>"; };
+		C596C0241F5C262800004DF6 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		C596C0261F5C262C00004DF6 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		C596C0281F5C28D200004DF6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C596C02A1F5C39D600004DF6 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C596C02E1F5C411B00004DF6 /* PresentStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentStoryboard.swift; sourceTree = "<group>"; };
 		C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodayCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +171,30 @@
 				5D87F07F2F2BC3861FFCFD78 /* Pods-HearthApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C53AC7B51F4981720067B8F8 /* selectfriends */ = {
+			isa = PBXGroup;
+			children = (
+				C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */,
+			);
+			name = selectfriends;
+			sourceTree = "<group>";
+		};
+		C53AC7BC1F574A940067B8F8 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				C53AC7BD1F574AA30067B8F8 /* User.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
+		C53AC7C31F5984540067B8F8 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				C53AC7CA1F5986B70067B8F8 /* ProfileViewController.swift */,
+			);
+			name = profile;
 			sourceTree = "<group>";
 		};
 		C54BABE31F290B7F00E47341 /* graph */ = {
@@ -167,6 +223,7 @@
 				C55101AB1F2390F300B2EC8A /* CurrentRateView.xib */,
 				C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */,
 				C592ED171F337E4C00902383 /* FriendsSelectedView.xib */,
+				C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -179,20 +236,23 @@
 			name = authantication;
 			sourceTree = "<group>";
 		};
-		C5642EEE1F1B79E4005363A0 /* constants */ = {
+		C5642EEE1F1B79E4005363A0 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				C5642EEF1F1B7A03005363A0 /* AuthError.swift */,
 				C5642EF11F1B7A3D005363A0 /* ViewConstants.swift */,
 				C5642EF31F1B7A76005363A0 /* Constants.swift */,
 			);
-			name = constants;
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		C5642EF71F1BC175005363A0 /* databse */ = {
 			isa = PBXGroup;
 			children = (
+				C53AC7BC1F574A940067B8F8 /* entity */,
 				C5642EF81F1BC18E005363A0 /* DBProvider.swift */,
+				C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */,
+				C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */,
 			);
 			name = databse;
 			sourceTree = "<group>";
@@ -209,8 +269,9 @@
 		C58C412C1F1950E900507911 = {
 			isa = PBXGroup;
 			children = (
-				C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */,
 				C58C41371F1950EA00507911 /* HearthApp */,
+				C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */,
+				C53AC7D01F5B4F070067B8F8 /* Oswald-Light.ttf */,
 				C58C41361F1950EA00507911 /* Products */,
 				4F768A7FAFCD7EDF4F639995 /* Pods */,
 				D3CA6571EA7DD8FAF592DCE0 /* Frameworks */,
@@ -228,13 +289,13 @@
 		C58C41371F1950EA00507911 /* HearthApp */ = {
 			isa = PBXGroup;
 			children = (
+				C596C01C1F5C260700004DF6 /* Storyboards */,
 				C592ED1C1F33C31100902383 /* Utils */,
 				C58C414E1F1986E000507911 /* Controllers */,
 				C55101A61F1F91B100B2EC8A /* View */,
 				C55101A51F1F91A700B2EC8A /* Model */,
-				C5642EEE1F1B79E4005363A0 /* constants */,
+				C5642EEE1F1B79E4005363A0 /* Constants */,
 				C58C41381F1950EA00507911 /* AppDelegate.swift */,
-				C58C413C1F1950EA00507911 /* Main.storyboard */,
 				C58C413F1F1950EA00507911 /* Assets.xcassets */,
 				C58C41411F1950EA00507911 /* LaunchScreen.storyboard */,
 				C58C41441F1950EA00507911 /* Info.plist */,
@@ -248,10 +309,13 @@
 		C58C414E1F1986E000507911 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C596C01B1F5C01FC00004DF6 /* login */,
+				C596C0191F5C01EA00004DF6 /* signup */,
+				C53AC7C31F5984540067B8F8 /* profile */,
+				C53AC7B51F4981720067B8F8 /* selectfriends */,
+				C592ED241F38CE1700902383 /* addfriend */,
 				C591C1831F2A09EA00F9E448 /* main */,
 				C58C414F1F19871400507911 /* LaunchViewController.swift */,
-				C58C41511F19878700507911 /* LoginViewController.swift */,
-				C58C41531F19879C00507911 /* SignUpViewController.swift */,
 				C5642EF51F1B93C5005363A0 /* FriendsTableViewController.swift */,
 			);
 			name = Controllers;
@@ -283,8 +347,48 @@
 			isa = PBXGroup;
 			children = (
 				C592ED1D1F33C35800902383 /* UIImageView+Extension.swift */,
+				C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */,
+				C596C02A1F5C39D600004DF6 /* UIButton+Extension.swift */,
+				C596C02E1F5C411B00004DF6 /* PresentStoryboard.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		C592ED241F38CE1700902383 /* addfriend */ = {
+			isa = PBXGroup;
+			children = (
+				C592ED251F38CE3400902383 /* AddFriendViewController.swift */,
+			);
+			name = addfriend;
+			sourceTree = "<group>";
+		};
+		C596C0191F5C01EA00004DF6 /* signup */ = {
+			isa = PBXGroup;
+			children = (
+				C58C41531F19879C00507911 /* SignUpViewController.swift */,
+			);
+			name = signup;
+			sourceTree = "<group>";
+		};
+		C596C01B1F5C01FC00004DF6 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				C58C41511F19878700507911 /* LoginViewController.swift */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		C596C01C1F5C260700004DF6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C596C01E1F5C261B00004DF6 /* AddFriends.storyboard */,
+				C596C0201F5C262000004DF6 /* Main.storyboard */,
+				C596C0221F5C262400004DF6 /* SelectFriends.storyboard */,
+				C596C0281F5C28D200004DF6 /* Profile.storyboard */,
+				C596C0241F5C262800004DF6 /* SignIn.storyboard */,
+				C596C0261F5C262C00004DF6 /* SignUp.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		D3CA6571EA7DD8FAF592DCE0 /* Frameworks */ = {
@@ -382,16 +486,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C596C0231F5C262400004DF6 /* SelectFriends.storyboard in Resources */,
+				C53AC7D11F5B4F1F0067B8F8 /* Oswald-Light.ttf in Resources */,
 				C591C1871F2A2BB600F9E448 /* CalendarCollectionViewCell.xib in Resources */,
 				C58C41431F1950EA00507911 /* LaunchScreen.storyboard in Resources */,
+				C596C0211F5C262000004DF6 /* Main.storyboard in Resources */,
+				C596C01F1F5C261B00004DF6 /* AddFriends.storyboard in Resources */,
 				C58C414B1F19550D00507911 /* GoogleService-Info.plist in Resources */,
 				C54BABDB1F28E0DF00E47341 /* oswald in Resources */,
 				C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */,
 				C58C41401F1950EA00507911 /* Assets.xcassets in Resources */,
-				C58C413E1F1950EA00507911 /* Main.storyboard in Resources */,
+				C596C0291F5C28D200004DF6 /* Profile.storyboard in Resources */,
 				C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */,
 				C55101AC1F2390F300B2EC8A /* CurrentRateView.xib in Resources */,
+				C596C0251F5C262800004DF6 /* SignIn.storyboard in Resources */,
 				C592ED181F337E4C00902383 /* FriendsSelectedView.xib in Resources */,
+				C596C0271F5C262C00004DF6 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,23 +560,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53AC7CF1F5B46430067B8F8 /* CustomTextField.swift in Sources */,
+				C53AC7CD1F5B45FC0067B8F8 /* UITextField+Extension.swift in Sources */,
 				C5642EF01F1B7A03005363A0 /* AuthError.swift in Sources */,
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
 				C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
+				C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */,
+				C53AC7C21F574DC60067B8F8 /* FriendsHandler.swift in Sources */,
 				C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */,
 				C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */,
+				C596C02B1F5C39D600004DF6 /* UIButton+Extension.swift in Sources */,
 				C5642EF61F1B93C5005363A0 /* FriendsTableViewController.swift in Sources */,
 				C5642EF21F1B7A3D005363A0 /* ViewConstants.swift in Sources */,
+				C53AC7CB1F5986B70067B8F8 /* ProfileViewController.swift in Sources */,
 				C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */,
 				C58C41501F19871400507911 /* LaunchViewController.swift in Sources */,
+				C53AC7C01F574BCC0067B8F8 /* UserHandler.swift in Sources */,
 				C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */,
+				C596C02F1F5C411B00004DF6 /* PresentStoryboard.swift in Sources */,
 				C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */,
 				C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */,
 				C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */,
 				C5642F061F1D3C16005363A0 /* GraphViewController.swift in Sources */,
+				C592ED261F38CE3400902383 /* AddFriendViewController.swift in Sources */,
 				C58C41541F19879C00507911 /* SignUpViewController.swift in Sources */,
 				C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */,
+				C53AC7BE1F574AA30067B8F8 /* User.swift in Sources */,
 				C5642EF41F1B7A76005363A0 /* Constants.swift in Sources */,
 				C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */,
 				C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */,
@@ -484,14 +604,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C58C413C1F1950EA00507911 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C58C413D1F1950EA00507911 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C58C41411F1950EA00507911 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -34,13 +34,21 @@ class AuthProvider {
     }
     
     
-    func signup(email : String, password : String, loginHandler: ((_ msg : String?) -> Void)?) {
+    func signup(email : String, username: String, password : String, loginHandler: ((_ msg : String?) -> Void)?) {
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
+                guard user != nil else {
+                    print("------------ USER ERROR, not probable ------------")
+                    return
+                }
+                
                 loginHandler!(nil)
                 
-                //TODO - Save user to DB
+                
+                let userEntity = User(email: email, username: username, UID: user!.uid)
+                
+                UserHandler.sharedInstance.addUser(user: userEntity)
                 
                 self.login(email: email, password: password, loginHandler: loginHandler)
                 

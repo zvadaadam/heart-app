@@ -107,6 +107,19 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         }
     }
     
+    
+    @IBAction func friendsTapped(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func profileTapped(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
     func createMockData() -> (x: [Int], y: [Int]) {
         
         var x : [Int] = []

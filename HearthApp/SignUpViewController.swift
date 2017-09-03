@@ -11,36 +11,57 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: CustomTextField!
+    @IBOutlet weak var passwordField: CustomTextField!
+    @IBOutlet weak var usernameField:CustomTextField!
+    
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signupButton.addTarget(self, action: #selector(signupTapped), for: .touchUpInside)
+        
+        setTextFieldsTargetNotEmpty()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        let VC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        
-        self.present(VC, animated: true, completion: nil)
+        PresentStoryboard.sharedInstance.showSignIn(vc: self)
+    }
+
+    func signupTapped() {
+        if let username = usernameField.text, let password = passwordField.text, let email = emailField.text {
+            if username != "" && password != "" && email != "" {
+                AuthProvider.getInstance.signup(email: email, username: username, password: password, loginHandler: { (msg) in
+                    if msg != nil {
+                        self.alertUser(title: "Sign Up", msg: msg)
+                    } else {
+                        print("SIGN UP SUCSESS")
+                    
+                        PresentStoryboard.sharedInstance.showProfile(vc: self)
+                    }
+                })
+            }
+        }
     }
     
-    @IBAction func signupTapped(_ sender: Any) {
-        let username = usernameField.text
-        let password = passwordField.text
+    private func setTextFieldsTargetNotEmpty() {
+        signupButton.disable()
         
-        if username != "" && password != "" {
-            AuthProvider.getInstance.signup(email: username!, password: password!, loginHandler: { (msg) in
-                if msg != nil {
-                    self.alertUser(title: "Sign Up", msg: msg)
-                } else {
-                    print("SIGN UP SUCSESS")
-                    
-                    self.performSegue(withIdentifier: ViewConstants.FRIEND_SEGUE, sender: nil)
-                }
-            })
-        } else {
-            
+        usernameField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        emailField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        passwordField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        
+    }
+    
+    @objc private func textFieldsIsNotEmpty() {
+        guard let username = usernameField.text, !username.isEmpty, username != usernameField.placeholder,
+            let password = passwordField.text, !password.isEmpty, password != passwordField.placeholder,
+            let email = emailField.text, !email.isEmpty, email != emailField.placeholder else {
+                return
         }
+        
+        signupButton.enable()
     }
     
     private func alertUser(title : String, msg : String?) {

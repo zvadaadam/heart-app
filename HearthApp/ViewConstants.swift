@@ -9,12 +9,9 @@
 import Foundation
 
 struct ViewConstants {
-    
-    static let FRIEND_SEGUE =   "FriendSegue"
-    
     static let LOGIN        =   "LoginViewController"
     static let SIGN_UP      =   "SignUpViewController"
-    
+    static let PROFILE      =   "ProfileViewController"
     
     
 }
