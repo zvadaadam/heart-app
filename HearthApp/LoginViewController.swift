@@ -32,15 +32,14 @@ class LoginViewController: UIViewController {
     }
     
     func loginTapped() {
-        
         if let email = emailField.text, let password = passwordField.text {
             if email != "" && password != "" {
-                AuthProvider.getInstance.login(email: email, password: password, loginHandler: { (msg) in
+                AuthProvider.sharedInstance.login(email: email, password: password, loginHandler: { (msg) in
                     if msg != nil {
                         self.alertUser(title: "Login", msg: msg)
                     } else {
                         print("LOGIN SUCSESS")
-
+                        
                         PresentStoryboard.sharedInstance.showProfile(vc: self)
                     }
                 })
@@ -65,7 +64,6 @@ class LoginViewController: UIViewController {
         
         emailField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
-    
     }
     
     @objc private func textFieldsIsNotEmpty() {

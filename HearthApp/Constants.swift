@@ -29,9 +29,12 @@ struct Constants {
         static let FIRST_NAME = "firstname"
         static let SURNAME = "surname"
         static let USERNAME = "username"
+        static let GENDER = "gender"
         static let UID = "uid"
         static let EMAIL = "email"
         static let FRIENDS = "friends"
+        static let WEIGHT = "weight"
+        static let YEAR_BIRTH = "yearOfBirth"
     }
     
     struct Controllers {

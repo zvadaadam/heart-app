@@ -32,7 +32,7 @@ class DBProvider {
     }
     
     func profileRef(UID: String) -> FIRDatabaseReference {
-        return userRef.child(UID).child(Constants.PROFILE)
+        return userRef.child(UID)
     }
     
     func friendsOfUser(UID: String) -> FIRDatabaseReference {

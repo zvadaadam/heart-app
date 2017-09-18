@@ -9,23 +9,17 @@
 import Foundation
 import FirebaseAuth
 
-/*
- * Singleton
- */
+
 class AuthProvider {
     
-    private static let authInstance = AuthProvider()
-    
-    static var getInstance : AuthProvider {
-        return authInstance;
-    }
-    
+    static let sharedInstance = AuthProvider()
     
     func login(email : String, password : String, loginHandler: ((_ msg : String?) -> Void)?) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 loginHandler!(nil)
+                UserHandler.sharedInstance.addUsernameToDefaults()
             } else {
                 self.handleErrors(err: error! as NSError, loginHandler: loginHandler)
             }
@@ -52,6 +46,7 @@ class AuthProvider {
                 
                 self.login(email: email, password: password, loginHandler: loginHandler)
                 
+                UserDefaults.standard.set(username, forKey: Constants.User.USERNAME)
             } else {
                 self.handleErrors(err: error! as NSError, loginHandler: loginHandler)
             }
@@ -59,6 +54,29 @@ class AuthProvider {
         
     }
     
+    
+    func isLoggedIn() -> Bool {
+        if FIRAuth.auth()?.currentUser != nil {
+            return true
+        }
+        return false
+    }
+    
+    func logOut() -> Bool {
+        if FIRAuth.auth()?.currentUser != nil {
+            do {
+                try FIRAuth.auth()?.signOut()
+                return true
+            } catch {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func currentUID() -> String? {
+        return FIRAuth.auth()?.currentUser?.uid
+    }
     
     private func handleErrors(err : NSError, loginHandler : ((_ msg : String?) -> Void)?) {
         if let errCode = FIRAuthErrorCode(rawValue: err.code) {

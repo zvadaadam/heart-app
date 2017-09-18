@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Swinject.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96BF7FAF1C4C5DA5D0F4547D5731AF5F</key>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<key>D3E9FDE66EF6C6C4896D33013C81EF19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2A72591D6496EF2D8F4E0162E2D316D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

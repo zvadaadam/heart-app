@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iE2-xc-GWX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,17 +34,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search friend..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vK9-nw-E7J">
-                                <rect key="frame" x="57" y="66" width="302" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-ec-jhv">
-                                <rect key="frame" x="20" y="71" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view alpha="0.45000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIW-vK-oI7" userLabel="separatorFind">
                                 <rect key="frame" x="0.0" y="104" width="375" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,7 +42,62 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nLf-dm-Xgj">
                                 <rect key="frame" x="0.0" y="113" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addFriendsCell" id="gxa-7P-NDW" customClass="AddFriendsCell" customModule="HearthApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxa-7P-NDW" id="RdE-NI-Ur0" customClass="AddFriendsCell" customModule="HearthApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teri" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-8o-TSh">
+                                                    <rect key="frame" x="21" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="aaE-9J-Tsp"/>
+                                                        <constraint firstAttribute="height" constant="36" id="h96-0I-fuU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEU-ug-wYj">
+                                                    <rect key="frame" x="65" y="4" width="254" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="254" id="aR9-3j-dcl"/>
+                                                        <constraint firstAttribute="height" constant="36" id="sJe-tW-Id6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIC-Es-X77">
+                                                    <rect key="frame" x="327" y="2" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="2ea-Ec-Y9w"/>
+                                                        <constraint firstAttribute="width" constant="40" id="V7v-wJ-KA3"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icPlus"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DEU-ug-wYj" firstAttribute="leading" secondItem="dZK-8o-TSh" secondAttribute="trailing" constant="8" id="EA7-nw-1iL"/>
+                                                <constraint firstItem="yIC-Es-X77" firstAttribute="leading" secondItem="DEU-ug-wYj" secondAttribute="trailing" constant="8" id="TYr-Ma-fld"/>
+                                                <constraint firstItem="yIC-Es-X77" firstAttribute="top" secondItem="RdE-NI-Ur0" secondAttribute="top" constant="2" id="Yz9-7e-bEn"/>
+                                                <constraint firstItem="DEU-ug-wYj" firstAttribute="top" secondItem="RdE-NI-Ur0" secondAttribute="topMargin" constant="-4" id="c0T-cB-lM4"/>
+                                                <constraint firstItem="dZK-8o-TSh" firstAttribute="top" secondItem="RdE-NI-Ur0" secondAttribute="top" constant="4" id="mKQ-CP-wCF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yIC-Es-X77" secondAttribute="trailing" id="mk3-Xb-w2c"/>
+                                                <constraint firstItem="dZK-8o-TSh" firstAttribute="leading" secondItem="RdE-NI-Ur0" secondAttribute="leadingMargin" constant="13" id="ojW-D5-MGL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yIC-Es-X77" secondAttribute="trailing" id="uPS-Y6-chZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="dZK-8o-TSh" secondAttribute="bottom" constant="4" id="uzE-km-W7o"/>
+                                                <constraint firstAttribute="bottom" secondItem="yIC-Es-X77" secondAttribute="bottom" constant="2" id="w4t-X1-wD5"/>
+                                                <constraint firstAttribute="bottom" secondItem="dZK-8o-TSh" secondAttribute="bottom" constant="4" id="zYI-5O-xrK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButton" destination="yIC-Es-X77" id="jiK-4m-N1s"/>
+                                            <outlet property="nameLabel" destination="DEU-ug-wYj" id="0Z3-Ln-fyY"/>
+                                            <outlet property="profileImage" destination="dZK-8o-TSh" id="Axd-Y6-k5Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5Z-ls-cMe">
                                 <rect key="frame" x="16" y="20" width="24" height="21"/>
@@ -62,12 +107,22 @@
                                     <action selector="closeTapped:" destination="iE2-xc-GWX" eventType="touchUpInside" id="Xpf-7W-1KA"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" text="" placeholder="Search friends..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaI-rJ-sR7">
+                                <rect key="frame" x="16" y="60" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <connections>
-                        <outlet property="searchField" destination="vK9-nw-E7J" id="z9U-cQ-6gL"/>
                         <outlet property="tableView" destination="nLf-dm-Xgj" id="pWq-D7-VEA"/>
+                        <outlet property="userSearch" destination="OaI-rJ-sR7" id="m7W-es-HM7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spf-bE-XWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,7 +131,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Teri" width="601" height="601"/>
         <image name="icCancel" width="24" height="24"/>
-        <image name="icSearch" width="13" height="13"/>
+        <image name="icPlus" width="72" height="72"/>
     </resources>
 </document>

@@ -32,12 +32,12 @@ class SignUpViewController: UIViewController {
     func signupTapped() {
         if let username = usernameField.text, let password = passwordField.text, let email = emailField.text {
             if username != "" && password != "" && email != "" {
-                AuthProvider.getInstance.signup(email: email, username: username, password: password, loginHandler: { (msg) in
+                AuthProvider.sharedInstance.signup(email: email, username: username, password: password, loginHandler: { (msg) in
                     if msg != nil {
                         self.alertUser(title: "Sign Up", msg: msg)
                     } else {
                         print("SIGN UP SUCSESS")
-                    
+                        
                         PresentStoryboard.sharedInstance.showProfile(vc: self)
                     }
                 })
