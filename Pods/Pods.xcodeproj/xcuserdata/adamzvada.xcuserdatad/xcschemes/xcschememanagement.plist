@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImagePicker-ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HearthApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,10 +34,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34C65FC1F9E36EA38BA8B24759D45E03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51BF177ED9CBF3C5FD22AFA9862D900F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3E9FDE66EF6C6C4896D33013C81EF19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2A72591D6496EF2D8F4E0162E2D316D</key>
+		<key>E997ECDCE0813C5A69FD2FCEA6F0980D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

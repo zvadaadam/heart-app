@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardOnTap()
+        
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
         setTextFieldsTargetNotEmpty()

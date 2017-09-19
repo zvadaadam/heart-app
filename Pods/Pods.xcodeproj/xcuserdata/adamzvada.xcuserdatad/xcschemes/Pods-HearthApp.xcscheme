@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2A72591D6496EF2D8F4E0162E2D316D"
+               BlueprintIdentifier = "E997ECDCE0813C5A69FD2FCEA6F0980D"
                BuildableName = "Pods_HearthApp.framework"
                BlueprintName = "Pods-HearthApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2A72591D6496EF2D8F4E0162E2D316D"
+            BlueprintIdentifier = "E997ECDCE0813C5A69FD2FCEA6F0980D"
             BuildableName = "Pods_HearthApp.framework"
             BlueprintName = "Pods-HearthApp"
             ReferencedContainer = "container:Pods.xcodeproj">

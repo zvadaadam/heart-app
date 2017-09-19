@@ -46,11 +46,18 @@ class UserHandler {
             
             print(snapshot)
             
-//            if let dictionary = snapshot.value as? [String : Any] {
-//                
-//            }
+            var users: [User] = []
             
-            completion([User(email: "test@test.test", username: "test", UID: "test")])
+            if let dictionary = snapshot.value as? [String : Any] {
+                for (_, value) in dictionary {
+                    if let friendsData = value as? [String : Any] {
+                        let user = User()
+                        user.setValuesForKeys(friendsData)
+                        users.append(user)
+                    }
+                }
+            }
+            completion(users)
         })
     }
     

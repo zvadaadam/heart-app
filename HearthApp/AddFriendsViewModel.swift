@@ -28,6 +28,7 @@ class AddFriendsViewModel {
     
     func searchUser(name: String) {
         userHandler.getUsers { (users) in
+            self.users = []
             for user in users {
                 self.users.append(user)
             }

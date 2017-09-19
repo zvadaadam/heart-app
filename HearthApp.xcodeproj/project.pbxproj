@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A605A274CD2BEE172352D5A3 /* Pods_HearthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */; };
 		C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509978F1F1E93DB0073F600 /* GraphLineView.swift */; };
+		C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5345AC21F711061009463A9 /* UIViewController+Extension.swift */; };
 		C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53847641F2BEDF7006B7711 /* CalendarDate.swift */; };
 		C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */; };
 		C53AC7BE1F574AA30067B8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7BD1F574AA30067B8F8 /* User.swift */; };
@@ -104,6 +105,7 @@
 		5D87F07F2F2BC3861FFCFD78 /* Pods-HearthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthApp/Pods-HearthApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C509978F1F1E93DB0073F600 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
+		C5345AC21F711061009463A9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C53847641F2BEDF7006B7711 /* CalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
 		C53AC7BD1F574AA30067B8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */,
 				C596C02A1F5C39D600004DF6 /* UIButton+Extension.swift */,
 				C596C02E1F5C411B00004DF6 /* PresentStoryboard.swift */,
+				C5345AC21F711061009463A9 /* UIViewController+Extension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				C53AC7CD1F5B45FC0067B8F8 /* UITextField+Extension.swift in Sources */,
 				C5642EF01F1B7A03005363A0 /* AuthError.swift in Sources */,
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
+				C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */,
 				C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
 				C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */,

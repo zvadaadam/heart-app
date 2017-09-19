@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardOnTap()
+        
         signupButton.addTarget(self, action: #selector(signupTapped), for: .touchUpInside)
         
         setTextFieldsTargetNotEmpty()
