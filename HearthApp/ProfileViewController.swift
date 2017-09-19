@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import ImagePicker
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     
-    @IBOutlet weak var firstnameField:CustomTextField!
+    @IBOutlet weak var firstnameField: CustomTextField!
     
     @IBOutlet weak var surnameField: CustomTextField!
     
@@ -57,39 +56,37 @@ class ProfileViewController: UIViewController {
 }
 
 
-extension ProfileViewController: ImagePickerDelegate {
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func profileImageTapped() {
-        var config = Configuration()
-        config.doneButtonTitle = "Finish"
-        config.noImagesTitle = "Sorry! There are no images here!"
-        config.recordLocation = false
-        config.allowMultiplePhotoSelection = false
-        
-        let picker = ImagePickerController()
+        let picker = UIImagePickerController()
         picker.delegate = self
-        picker.configuration = config
-        //picker.imageLimit = 1
-        picker.startOnFrontCamera = true
-        picker.preferredImageSize = CGSize(width: 100, height: 100)
+        picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
     }
     
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        guard images.count > 0 else {
-            return
-        }
-    }
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        if images.count != 0 {
-            profileImage.image = images[0]
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            profileImage.image = editedImage
+            editedImage.printMemory()
+        } else if let originalPhoto = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            profileImage.image = originalPhoto
+            originalPhoto.printMemory()
         }
         dismiss(animated: true, completion: nil)
     }
     
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension UIImage {
+    func printMemory() {
+        let imgData: NSData = NSData(data: UIImageJPEGRepresentation((self), 1)!)
+        let imageSize: Int = imgData.length
+        print("Size of image in KB: %f ", Double(imageSize) / 1024.0)
+    }
 }

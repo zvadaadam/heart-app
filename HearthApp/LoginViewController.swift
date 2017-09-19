@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import TextFieldEffects
 
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailField: CustomTextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: HoshiTextField!
+    @IBOutlet weak var passwordField: HoshiTextField!
     
     @IBOutlet weak var loginButton: UIButton!
     

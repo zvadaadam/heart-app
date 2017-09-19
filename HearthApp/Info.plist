@@ -26,6 +26,7 @@
 	<string>In order to set your beautiful profile picture.</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Oswald-Light.ttf</string>
 		<string>Oswald-Medium.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -42,7 +42,7 @@ struct Constants {
         static let SIGN_UP = "SignUpViewController"
         static let PROFILE = "ProfileViewController"
         static let SELECT_FRIENDS = "SelectFriendsViewController"
-        static let ADD_FRIENDS = "AddFriendsViewController"
+        static let ADD_FRIENDS = "AddFriendViewController"
         static let GRAPH = "GraphViewController"
     }
     

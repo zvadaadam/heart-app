@@ -12,6 +12,5 @@ target 'HearthApp' do
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
     pod 'Swinject'
-    pod 'ImagePicker'
     pod 'TextFieldEffects'
 end
