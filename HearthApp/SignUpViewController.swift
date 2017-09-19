@@ -76,4 +76,8 @@ class SignUpViewController: UIViewController {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+    
+    private func firstLaunchParam() {
+        UserDefaults.standard.set(true, forKey: Constants.UserDef.FIRST_LAUNCH)
+    }
 }

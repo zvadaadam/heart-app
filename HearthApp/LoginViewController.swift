@@ -43,7 +43,10 @@ class LoginViewController: UIViewController {
                     } else {
                         print("LOGIN SUCSESS")
                         
+                        //DEBUG
                         PresentStoryboard.sharedInstance.showProfile(vc: self)
+//                       PresentStoryboard.sharedInstance.showGraph(vc: self)
+//                        
                     }
                 })
             } else {

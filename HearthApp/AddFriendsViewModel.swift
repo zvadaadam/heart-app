@@ -17,6 +17,8 @@ class AddFriendsViewModel {
     
     var userHandler: UserHandler
     
+    var authProvider: AuthProvider = AuthProvider.sharedInstance
+    
     weak var delegate: AddFriendsViewModelDelegate?
     
     var users: [User] = []
@@ -37,12 +39,16 @@ class AddFriendsViewModel {
         }
     }
     
+    func addFriend(FID: String) {
+        userHandler.addFriendToUser(UID: authProvider.currentUID()!, FID: FID)
+    }
+    
+    func removeFriend(FID: String) {
+        userHandler.removeFriendFromUser(UID: authProvider.currentUID()!, FID: FID)
+    }
+    
     func numberOfUsers() -> Int {
         return users.count
     }
 }
 
-//extension AddFriendViewModel: FetchUsersData {
-//
-//
-//}

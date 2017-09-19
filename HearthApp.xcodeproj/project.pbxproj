@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A605A274CD2BEE172352D5A3 /* Pods_HearthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */; };
 		C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509978F1F1E93DB0073F600 /* GraphLineView.swift */; };
+		C52478571F716CF000309561 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52478561F716CF000309561 /* CircleImageView.swift */; };
+		C524785A1F71741A00309561 /* StorageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52478591F71741900309561 /* StorageHandler.swift */; };
+		C524785F1F71B27200309561 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524785E1F71B27200309561 /* Cache.swift */; };
+		C52478641F71E08900309561 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52478631F71E08900309561 /* HealthKitManager.swift */; };
 		C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5345AC21F711061009463A9 /* UIViewController+Extension.swift */; };
 		C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53847641F2BEDF7006B7711 /* CalendarDate.swift */; };
 		C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */; };
@@ -105,6 +109,10 @@
 		5D87F07F2F2BC3861FFCFD78 /* Pods-HearthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthApp/Pods-HearthApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C509978F1F1E93DB0073F600 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
+		C52478561F716CF000309561 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		C52478591F71741900309561 /* StorageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHandler.swift; sourceTree = "<group>"; };
+		C524785E1F71B27200309561 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		C52478631F71E08900309561 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		C5345AC21F711061009463A9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C53847641F2BEDF7006B7711 /* CalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +189,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C524785D1F71B26600309561 /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				C524785E1F71B27200309561 /* Cache.swift */,
+			);
+			name = cache;
+			sourceTree = "<group>";
+		};
+		C52478621F71E06700309561 /* health */ = {
+			isa = PBXGroup;
+			children = (
+				C52478631F71E08900309561 /* HealthKitManager.swift */,
+			);
+			name = health;
+			sourceTree = "<group>";
+		};
 		C53AC7B51F4981720067B8F8 /* selectfriends */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +241,8 @@
 		C55101A51F1F91A700B2EC8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C52478621F71E06700309561 /* health */,
+				C524785D1F71B26600309561 /* cache */,
 				C591C18A1F2A2F9300F9E448 /* calendar */,
 				C5642EEB1F1AC4DD005363A0 /* authantication */,
 				C5642EF71F1BC175005363A0 /* databse */,
@@ -233,6 +259,7 @@
 				C592ED1A1F337E5B00902383 /* FriendsSelectedView.swift */,
 				C592ED171F337E4C00902383 /* FriendsSelectedView.xib */,
 				C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */,
+				C52478561F716CF000309561 /* CircleImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,6 +289,7 @@
 				C5642EF81F1BC18E005363A0 /* DBProvider.swift */,
 				C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */,
 				C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */,
+				C52478591F71741900309561 /* StorageHandler.swift */,
 			);
 			name = databse;
 			sourceTree = "<group>";
@@ -575,8 +603,10 @@
 			files = (
 				C53AC7CF1F5B46430067B8F8 /* CustomTextField.swift in Sources */,
 				C53AC7CD1F5B45FC0067B8F8 /* UITextField+Extension.swift in Sources */,
+				C524785A1F71741A00309561 /* StorageHandler.swift in Sources */,
 				C5642EF01F1B7A03005363A0 /* AuthError.swift in Sources */,
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
+				C524785F1F71B27200309561 /* Cache.swift in Sources */,
 				C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */,
 				C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
@@ -593,9 +623,11 @@
 				C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */,
 				C58C41501F19871400507911 /* LaunchViewController.swift in Sources */,
 				C53AC7C01F574BCC0067B8F8 /* UserHandler.swift in Sources */,
+				C52478641F71E08900309561 /* HealthKitManager.swift in Sources */,
 				C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */,
 				C596C02F1F5C411B00004DF6 /* PresentStoryboard.swift in Sources */,
 				C59792BF1F70355F0018FE16 /* AddFriendsViewModel.swift in Sources */,
+				C52478571F716CF000309561 /* CircleImageView.swift in Sources */,
 				C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */,
 				C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */,
 				C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */,

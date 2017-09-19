@@ -35,6 +35,7 @@ struct Constants {
         static let FRIENDS = "friends"
         static let WEIGHT = "weight"
         static let YEAR_BIRTH = "yearOfBirth"
+        static let PROFILE_URL = "profileImageURL"
     }
     
     struct Controllers {
@@ -53,6 +54,11 @@ struct Constants {
         static let PROFILE = "Profile"
         static let SELECT_FRIENDS = "SelectFriends"
         static let ADD_FRIENDS = "AddFriends"
+    }
+    
+    struct UserDef {
+        static let FIRST_LAUNCH = "firstLauch"
+
     }
     
 }

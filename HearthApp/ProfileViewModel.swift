@@ -7,15 +7,51 @@
 //
 
 import Foundation
+import UIKit
+
+
+protocol ProfileViewModelProtocol: class {
+    func setProfileImage(image: UIImage)
+    func setProfileInfo(user: User)
+}
 
 class ProfileViewModel {
     
     var userHandler: UserHandler = UserHandler.sharedInstance
     var authProvider: AuthProvider = AuthProvider.sharedInstance
     
+    var user: User?
+    
+    weak var delegate: ProfileViewModelProtocol?
+    
+    func loadUser(complition: @escaping (User) -> Void) {
+        userHandler.getUser(UID: authProvider.currentUID()!) { (user) in
+            self.user = user
+            complition(user)
+        }
+    }
     
     func saveUserProfile(user: User) {
         userHandler.updateCurrentUser(user: user)
     }
     
+    func saveProfileImage(image: UIImage) {
+        userHandler.storeProfileImage(image: image)
+    }
+    
+    func retriveProfileImage() {
+        userHandler.loadProfileImage { (image) in
+            self.delegate?.setProfileImage(image: image)
+        }
+    }
+    
+    func retriveUserData() {
+        loadUser { (user) in
+            self.delegate?.setProfileInfo(user: user)
+            
+            self.userHandler.loadProfileImageWithUser(user: user, complition: { (image) in
+                self.delegate?.setProfileImage(image: image)
+            })
+        }
+    }
 }

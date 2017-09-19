@@ -17,6 +17,7 @@ class User: NSObject {
     var yearOfBirth: String?
     var email: String?
     var gender: String?
+    var profileImageURL: String?
     var friends: [User] = []
     
     override init() {}
@@ -56,7 +57,8 @@ class User: NSObject {
                                              Constants.User.FRIENDS: friends,
                                              Constants.User.WEIGHT: weight ?? "",
                                              Constants.User.YEAR_BIRTH: yearOfBirth ?? "",
-                                             Constants.User.GENDER: gender ?? ""
+                                             Constants.User.GENDER: gender ?? "",
+                                             Constants.User.PROFILE_URL: profileImageURL ?? ""
         ]
         
         return data

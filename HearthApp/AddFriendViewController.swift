@@ -102,12 +102,16 @@ extension AddFriendViewController: UITableViewDataSource {
         print(viewModel.users[button.tag])
         
         if button.isSelected {
+            viewModel.removeFriend(FID: viewModel.users[button.tag].uid!)
+            
             UIView.transition(with: button, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 button.setImage(UIImage(named: "icPlus"), for: .normal)
             }, completion: nil)
             
             button.isSelected = false
         } else {
+            viewModel.addFriend(FID: viewModel.users[button.tag].uid!)
+            
             UIView.transition(with: button, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 button.setImage(UIImage(named: "icTick"), for: .normal)
             }, completion: nil)
