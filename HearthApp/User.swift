@@ -48,6 +48,8 @@ class User: NSObject {
         
     }
     
+    
+    // TODO: refactor better way
     func createUserDictionary() -> Dictionary<String, Any> {
         let data: Dictionary<String, Any> = [Constants.User.FIRST_NAME: firstname ?? "",
                                              Constants.User.SURNAME: surname ?? "",

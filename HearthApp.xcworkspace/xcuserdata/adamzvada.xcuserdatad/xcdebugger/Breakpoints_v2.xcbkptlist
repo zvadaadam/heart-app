@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthApp/GraphViewController.swift"
-            timestampString = "523498193.377266"
+            timestampString = "527608351.62645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthApp/GraphViewController.swift"
-            timestampString = "523498193.377266"
+            timestampString = "527608351.627091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthApp/CurrentRateView.swift"
-            timestampString = "522537904.053298"
+            timestampString = "527608351.627627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -182,70 +182,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthApp/UserHandler.swift"
-            timestampString = "527507674.688302"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "getUserWithFriends(UID:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthApp/UserHandler.swift"
-            timestampString = "527507674.688302"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getAllUsers()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.UserHandler.(getAllUsers () -&gt; ()).(closure #1)"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/UserHandler.swift"
-                  timestampString = "527507276.215388"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.UserHandler.(getAllUsers () -&gt; ()).(closure #1)"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/UserHandler.swift"
-                  timestampString = "527507276.21711"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "596">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -305,102 +241,6 @@
             endingLineNumber = "43"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthApp/AddFriendsViewModel.swift"
-            timestampString = "527507172.019387"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "searchUser(name:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.AddFriendsViewModel.searchUser (name : Swift.String) -&gt; ()"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/AddFriendsViewModel.swift"
-                  timestampString = "527507176.539553"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.AddFriendsViewModel.(searchUser (name : Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/AddFriendsViewModel.swift"
-                  timestampString = "527507176.54372"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthApp/UserHandler.swift"
-            timestampString = "527507674.688302"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "getUsers(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.UserHandler.(getUsers (completion : (Swift.Array&lt;HearthApp.User&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/UserHandler.swift"
-                  timestampString = "527507371.92318"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "184">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HearthApp.UserHandler.(getUsers (completion : (Swift.Array&lt;HearthApp.User&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "HearthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamzvada/Documents/Development/HearthApp/HearthApp/UserHandler.swift"
-                  timestampString = "527507371.925155"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "612">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -11,14 +11,29 @@ import FirebaseDatabase
 import FirebaseStorage
 
 /*
- *  DBProvider is singleton
+ *  Database Model
+ *
+ *  +USER
+ *      +UID
+ *          -username
+ *          -firstname
+ *          -surname
+ *          -weight
+ *          -year of birth
+ *          +FRIENDS
+ *              +UID
+ *                  -isFriends
+ *  +HEART
+ *      +UID
+ *          +TIMESTAMP
+ *              -rate
+ *
  */
 class DBProvider {
     
     static let sharedInstance = DBProvider()
     
     
-    //Returns the link to top db
     var dbRef : DatabaseReference {
         return Database.database().reference(fromURL: Constants.DB_URL)
     }
@@ -39,7 +54,11 @@ class DBProvider {
         return self.profileRef(UID: UID).child(Constants.User.FRIENDS)
     }
     
+    func heartRef() -> DatabaseReference {
+        return dbRef.child(Constants.HEART)
+    }
+    
     func heartOfUserRef(UID: String) -> DatabaseReference {
-        return self.profileRef(UID: UID).child(Constants.HEART)
+        return heartRef().child(UID)
     }
 }

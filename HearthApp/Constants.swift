@@ -38,6 +38,11 @@ struct Constants {
         static let PROFILE_URL = "profileImageURL"
     }
     
+    struct Heart {
+        static let TIMESTAMP = "timestamp"
+        static let RATE = "rate"
+    }
+    
     struct Controllers {
         static let LOGIN = "LoginViewController"
         static let SIGN_UP = "SignUpViewController"

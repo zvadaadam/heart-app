@@ -25,6 +25,7 @@
 		C53AC7CD1F5B45FC0067B8F8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */; };
 		C53AC7CF1F5B46430067B8F8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */; };
 		C53AC7D11F5B4F1F0067B8F8 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C53AC7D01F5B4F070067B8F8 /* Oswald-Light.ttf */; };
+		C54A02581F7464E300022360 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A02571F7464E300022360 /* HeartRate.swift */; };
 		C54BABDB1F28E0DF00E47341 /* oswald in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDA1F28E0DF00E47341 /* oswald */; };
 		C54BABDE1F28E5CD00E47341 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */; };
 		C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55101A91F238F6600B2EC8A /* CurrentRateView.swift */; };
@@ -101,6 +102,7 @@
 		C53AC7CC1F5B45FC0067B8F8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		C53AC7CE1F5B46430067B8F8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C53AC7D01F5B4F070067B8F8 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		C54A02571F7464E300022360 /* HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		C54BABDA1F28E0DF00E47341 /* oswald */ = {isa = PBXFileReference; lastKnownFileType = folder; path = oswald; sourceTree = "<group>"; };
 		C54BABDD1F28E5CD00E47341 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Medium.ttf"; path = "HearthApp/oswald/Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		C55101A91F238F6600B2EC8A /* CurrentRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRateView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C53AC7BD1F574AA30067B8F8 /* User.swift */,
+				C54A02571F7464E300022360 /* HeartRate.swift */,
 			);
 			name = entity;
 			sourceTree = "<group>";
@@ -205,6 +208,17 @@
 				C5646EAD1F6EC07400680233 /* ProfileViewModel.swift */,
 			);
 			name = profile;
+			sourceTree = "<group>";
+		};
+		C54A02561F74644D00022360 /* handlers */ = {
+			isa = PBXGroup;
+			children = (
+				C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */,
+				C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */,
+				C52478591F71741900309561 /* StorageHandler.swift */,
+				C524786A1F71EDF000309561 /* HeartHandler.swift */,
+			);
+			name = handlers;
 			sourceTree = "<group>";
 		};
 		C54BABE31F290B7F00E47341 /* graph */ = {
@@ -222,7 +236,6 @@
 				C524785D1F71B26600309561 /* cache */,
 				C591C18A1F2A2F9300F9E448 /* calendar */,
 				C5642EEB1F1AC4DD005363A0 /* authantication */,
-				C5642EF71F1BC175005363A0 /* databse */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,17 +272,14 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
-		C5642EF71F1BC175005363A0 /* databse */ = {
+		C5642EF71F1BC175005363A0 /* Databse */ = {
 			isa = PBXGroup;
 			children = (
-				C53AC7BC1F574A940067B8F8 /* entity */,
 				C5642EF81F1BC18E005363A0 /* DBProvider.swift */,
-				C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */,
-				C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */,
-				C52478591F71741900309561 /* StorageHandler.swift */,
-				C524786A1F71EDF000309561 /* HeartHandler.swift */,
+				C54A02561F74644D00022360 /* handlers */,
+				C53AC7BC1F574A940067B8F8 /* entity */,
 			);
-			name = databse;
+			name = Databse;
 			sourceTree = "<group>";
 		};
 		C58C412C1F1950E900507911 = {
@@ -300,6 +310,7 @@
 				C592ED1C1F33C31100902383 /* Utils */,
 				C58C414E1F1986E000507911 /* Controllers */,
 				C55101A61F1F91B100B2EC8A /* View */,
+				C5642EF71F1BC175005363A0 /* Databse */,
 				C55101A51F1F91A700B2EC8A /* Model */,
 				C5642EEE1F1B79E4005363A0 /* Constants */,
 				C58C41381F1950EA00507911 /* AppDelegate.swift */,
@@ -586,6 +597,7 @@
 				C5642F061F1D3C16005363A0 /* GraphViewController.swift in Sources */,
 				C592ED261F38CE3400902383 /* AddFriendViewController.swift in Sources */,
 				C58C41541F19879C00507911 /* SignUpViewController.swift in Sources */,
+				C54A02581F7464E300022360 /* HeartRate.swift in Sources */,
 				C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */,
 				C53AC7BE1F574AA30067B8F8 /* User.swift in Sources */,
 				C5642EF41F1B7A76005363A0 /* Constants.swift in Sources */,
