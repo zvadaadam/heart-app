@@ -52,7 +52,7 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
         
         
-        let user : [(String, UIColor)] = [("ADAM", .red), ("TERI", .blue), ("SEMOUS", .white), ("BORISLAV", .yellow)]
+        let user : [(String, UIColor)] = [("Mock1", .red), ("Mock2", .blue), ("Mock3", .white), ("Mock4", .yellow)]
         
         setUserProfiles(users: user);
     }
@@ -109,14 +109,12 @@ class GraphViewController : UIViewController, ChartViewDelegate {
     
     
     @IBAction func friendsTapped(_ sender: Any) {
-        
+        PresentStoryboard.sharedInstance.showAddFriends(vc: self)
     }
     
     
     @IBAction func profileTapped(_ sender: Any) {
-        
-        
-        
+        PresentStoryboard.sharedInstance.showProfile(vc: self)
     }
     
     

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>To take your amazing selfie ;)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -22,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>To take your amazing selfie ;)</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>To expirience our features, we need to be able read your heart beat,</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>In order to set your beautiful profile picture.</string>
 	<key>UIAppFonts</key>
@@ -36,6 +38,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>

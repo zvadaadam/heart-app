@@ -19,10 +19,21 @@ class ProfileViewModel {
     
     var userHandler: UserHandler = UserHandler.sharedInstance
     var authProvider: AuthProvider = AuthProvider.sharedInstance
+    var healthManager: HealthKitManager = HealthKitManager.sharedInstance
     
     var user: User?
     
     weak var delegate: ProfileViewModelProtocol?
+    
+    func authorizeHealthKit() {
+        healthManager.authorizeHealthKit { (authorization, error) in
+            if error == nil && authorization == true {
+                print("HealthKit Access Obtained")
+            } else {
+                print("HealthKit Access Denined")
+            }
+        }
+    }
     
     func loadUser(complition: @escaping (User) -> Void) {
         userHandler.getUser(UID: authProvider.currentUID()!) { (user) in

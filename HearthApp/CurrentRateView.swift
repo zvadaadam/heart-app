@@ -20,7 +20,7 @@ class CurrentRateView : UIView {
         }
     }
     
-    @IBInspectable var filledColor : UIColor = .init(colorLiteralRed: 40/255, green: 40/255, blue: 40/255, alpha: 1) {
+    @IBInspectable var filledColor : UIColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1) {
         didSet {
             setNeedsDisplay()
         }

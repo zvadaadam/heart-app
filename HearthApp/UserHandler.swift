@@ -43,11 +43,12 @@ class UserHandler {
     }
     
     func addFriendToUser(UID: String, FID: String) {
-        dbProvider.friendsOfUser(UID: UID).child(Constants.User.FRIENDS).setValue(FID)
+        dbProvider.friendsOfUser(UID: UID).child(FID).setValue(false)
     }
     
     func removeFriendFromUser(UID: String, FID: String) {
-        dbProvider.friendsOfUser(UID: UID).child(Constants.User.FRIENDS).child(FID).removeValue()
+        dbProvider.friendsOfUser(UID: UID).child(FID).removeValue()
+        dbProvider.friendsOfUser(UID: FID).child(UID).removeValue()
     }
     
     func getUsers(completion: @escaping ([User]) -> Void) {
@@ -135,7 +136,7 @@ class UserHandler {
         let storageRef = dbProvider.storageRef.child("\(NSUUID().uuidString).png")
         
         if let uploadData = UIImageJPEGRepresentation(image, 0.1) {
-            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
                     print(error!)
                     return

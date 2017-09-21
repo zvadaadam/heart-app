@@ -19,27 +19,27 @@ class DBProvider {
     
     
     //Returns the link to top db
-    var dbRef : FIRDatabaseReference {
-        return FIRDatabase.database().reference(fromURL: Constants.DB_URL)
+    var dbRef : DatabaseReference {
+        return Database.database().reference(fromURL: Constants.DB_URL)
     }
     
-    var userRef : FIRDatabaseReference {
+    var userRef : DatabaseReference {
         return dbRef.child(Constants.USER)
     }
     
-    var storageRef : FIRStorageReference {
-        return FIRStorage.storage().reference(forURL: Constants.STORAGE_URL)
+    var storageRef : StorageReference {
+        return Storage.storage().reference(forURL: Constants.STORAGE_URL)
     }
     
-    func profileRef(UID: String) -> FIRDatabaseReference {
+    func profileRef(UID: String) -> DatabaseReference {
         return userRef.child(UID)
     }
     
-    func friendsOfUser(UID: String) -> FIRDatabaseReference {
-        return self.profileRef(UID: UID).child(Constants.FRIENDS)
+    func friendsOfUser(UID: String) -> DatabaseReference {
+        return self.profileRef(UID: UID).child(Constants.User.FRIENDS)
     }
     
-    func heartOfUserRef(UID: String) -> FIRDatabaseReference {
+    func heartOfUserRef(UID: String) -> DatabaseReference {
         return self.profileRef(UID: UID).child(Constants.HEART)
     }
 }

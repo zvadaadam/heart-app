@@ -56,9 +56,16 @@ extension AddFriendViewController: UISearchBarDelegate {
 
 extension AddFriendViewController: AddFriendsViewModelDelegate {
     
+    func setProfileInfo(image: UIImage) {
+        
+    }
+
+    
     func searchedUser(user: [User]) {
         tableView.reloadData()
     }
+    
+    
 
 }
 
@@ -77,6 +84,14 @@ extension AddFriendViewController: UITableViewDataSource {
         
         //TODO: check wheter is already friend 
         cell.addButton.isSelected = false
+        
+        UserHandler.sharedInstance.loadProfileImageWithUser(user: viewModel.users[indexPath.row]) { (image) in
+            DispatchQueue.main.async(execute: {
+                UIView.transition(with: cell.profileImage, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    cell.profileImage.image = image
+                }, completion: nil)
+            })
+        }
         
         cell.profileImage.circleImage()
         

@@ -45,9 +45,11 @@ class ProfileViewController: UIViewController {
         
         usernameLabel.text = UserDefaults.standard.value(forKey: Constants.User.USERNAME) as? String
         
-        getProfileImage()
-        
         getUserInfo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.authorizeHealthKit()
     }
     
     func getUserInfo() {

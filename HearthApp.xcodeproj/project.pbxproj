@@ -13,6 +13,8 @@
 		C524785A1F71741A00309561 /* StorageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52478591F71741900309561 /* StorageHandler.swift */; };
 		C524785F1F71B27200309561 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524785E1F71B27200309561 /* Cache.swift */; };
 		C52478641F71E08900309561 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52478631F71E08900309561 /* HealthKitManager.swift */; };
+		C52478691F71E98900309561 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52478681F71E98900309561 /* HealthKit.framework */; };
+		C524786B1F71EDF000309561 /* HeartHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524786A1F71EDF000309561 /* HeartHandler.swift */; };
 		C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5345AC21F711061009463A9 /* UIViewController+Extension.swift */; };
 		C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53847641F2BEDF7006B7711 /* CalendarDate.swift */; };
 		C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */; };
@@ -34,8 +36,6 @@
 		C5642EF61F1B93C5005363A0 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5642EF51F1B93C5005363A0 /* FriendsTableViewController.swift */; };
 		C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5642EF81F1BC18E005363A0 /* DBProvider.swift */; };
 		C5642F061F1D3C16005363A0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5642F051F1D3C16005363A0 /* GraphViewController.swift */; };
-		C5642F0A1F1D3D1B005363A0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5642F001F1D391E005363A0 /* Charts.framework */; };
-		C5642F0B1F1D3D1B005363A0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5642F001F1D391E005363A0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5646EAE1F6EC07400680233 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5646EAD1F6EC07400680233 /* ProfileViewModel.swift */; };
 		C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C41381F1950EA00507911 /* AppDelegate.swift */; };
 		C58C41401F1950EA00507911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58C413F1F1950EA00507911 /* Assets.xcassets */; };
@@ -66,30 +66,6 @@
 		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C5642EFF1F1D391E005363A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F241D8110E600722320;
-			remoteInfo = Charts;
-		};
-		C5642F011F1D391E005363A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F2E1D8110E600722320;
-			remoteInfo = ChartsTests;
-		};
-		C5642F0C1F1D3D1B005363A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 06165F231D8110E600722320;
-			remoteInfo = Charts;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		C5642F0E1F1D3D1B005363A0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -97,7 +73,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C5642F0B1F1D3D1B005363A0 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +88,9 @@
 		C52478591F71741900309561 /* StorageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHandler.swift; sourceTree = "<group>"; };
 		C524785E1F71B27200309561 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		C52478631F71E08900309561 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		C52478671F71E98800309561 /* HearthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearthApp.entitlements; sourceTree = "<group>"; };
+		C52478681F71E98900309561 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		C524786A1F71EDF000309561 /* HeartHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartHandler.swift; sourceTree = "<group>"; };
 		C5345AC21F711061009463A9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C53847641F2BEDF7006B7711 /* CalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		C53AC7B71F4981870067B8F8 /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +111,6 @@
 		C5642EF31F1B7A76005363A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C5642EF51F1B93C5005363A0 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		C5642EF81F1BC18E005363A0 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
-		C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Desktop/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		C5642F051F1D3C16005363A0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		C5646EAD1F6EC07400680233 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C58C41351F1950EA00507911 /* HearthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52478691F71E98900309561 /* HealthKit.framework in Frameworks */,
 				A605A274CD2BEE172352D5A3 /* Pods_HearthApp.framework in Frameworks */,
-				C5642F0A1F1D3D1B005363A0 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,17 +267,9 @@
 				C53AC7BF1F574BCC0067B8F8 /* UserHandler.swift */,
 				C53AC7C11F574DC60067B8F8 /* FriendsHandler.swift */,
 				C52478591F71741900309561 /* StorageHandler.swift */,
+				C524786A1F71EDF000309561 /* HeartHandler.swift */,
 			);
 			name = databse;
-			sourceTree = "<group>";
-		};
-		C5642EFB1F1D391E005363A0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5642F001F1D391E005363A0 /* Charts.framework */,
-				C5642F021F1D391E005363A0 /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C58C412C1F1950E900507911 = {
@@ -326,6 +295,7 @@
 		C58C41371F1950EA00507911 /* HearthApp */ = {
 			isa = PBXGroup;
 			children = (
+				C52478671F71E98800309561 /* HearthApp.entitlements */,
 				C596C01C1F5C260700004DF6 /* Storyboards */,
 				C592ED1C1F33C31100902383 /* Utils */,
 				C58C414E1F1986E000507911 /* Controllers */,
@@ -338,7 +308,6 @@
 				C58C41441F1950EA00507911 /* Info.plist */,
 				C58C414A1F19550D00507911 /* GoogleService-Info.plist */,
 				C54BABDA1F28E0DF00E47341 /* oswald */,
-				C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */,
 			);
 			path = HearthApp;
 			sourceTree = "<group>";
@@ -434,6 +403,7 @@
 		D3CA6571EA7DD8FAF592DCE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C52478681F71E98900309561 /* HealthKit.framework */,
 				5FCF089E6F0A627EDC243226 /* Pods_HearthApp.framework */,
 			);
 			name = Frameworks;
@@ -457,7 +427,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C5642F0D1F1D3D1B005363A0 /* PBXTargetDependency */,
 			);
 			name = HearthApp;
 			productName = HearthApp;
@@ -478,6 +447,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = V3MA6M9H6Q;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -492,35 +466,12 @@
 			mainGroup = C58C412C1F1950E900507911;
 			productRefGroup = C58C41361F1950EA00507911 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C5642EFB1F1D391E005363A0 /* Products */;
-					ProjectRef = C5642EFA1F1D391E005363A0 /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C58C41341F1950EA00507911 /* HearthApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C5642F001F1D391E005363A0 /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = C5642EFF1F1D391E005363A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5642F021F1D391E005363A0 /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = C5642F011F1D391E005363A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C58C41331F1950EA00507911 /* Resources */ = {
@@ -608,6 +559,7 @@
 				C58C41521F19878700507911 /* LoginViewController.swift in Sources */,
 				C524785F1F71B27200309561 /* Cache.swift in Sources */,
 				C5345AC31F711061009463A9 /* UIViewController+Extension.swift in Sources */,
+				C524786B1F71EDF000309561 /* HeartHandler.swift in Sources */,
 				C592ED1B1F337E5B00902383 /* FriendsSelectedView.swift in Sources */,
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
 				C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */,
@@ -643,14 +595,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C5642F0D1F1D3D1B005363A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = C5642F0C1F1D3D1B005363A0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C58C41411F1950EA00507911 /* LaunchScreen.storyboard */ = {
@@ -764,6 +708,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HearthApp/HearthApp.entitlements;
 				DEVELOPMENT_TEAM = V3MA6M9H6Q;
 				INFOPLIST_FILE = HearthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -780,6 +725,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HearthApp/HearthApp.entitlements;
 				DEVELOPMENT_TEAM = V3MA6M9H6Q;
 				INFOPLIST_FILE = HearthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

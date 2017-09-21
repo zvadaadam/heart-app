@@ -16,7 +16,7 @@ class AuthProvider {
     
     func login(email : String, password : String, loginHandler: ((_ msg : String?) -> Void)?) {
         
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 loginHandler!(nil)
                 UserHandler.sharedInstance.addUsernameToDefaults()
@@ -30,7 +30,7 @@ class AuthProvider {
     
     func signup(email : String, username: String, password : String, loginHandler: ((_ msg : String?) -> Void)?) {
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 guard user != nil else {
                     print("------------ USER ERROR, not probable ------------")
@@ -56,16 +56,16 @@ class AuthProvider {
     
     
     func isLoggedIn() -> Bool {
-        if FIRAuth.auth()?.currentUser != nil {
+        if Auth.auth().currentUser != nil {
             return true
         }
         return false
     }
     
     func logOut() -> Bool {
-        if FIRAuth.auth()?.currentUser != nil {
+        if Auth.auth().currentUser != nil {
             do {
-                try FIRAuth.auth()?.signOut()
+                try Auth.auth().signOut()
                 return true
             } catch {
                 return false
@@ -75,29 +75,29 @@ class AuthProvider {
     }
     
     func currentUID() -> String? {
-        return FIRAuth.auth()?.currentUser?.uid
+        return Auth.auth().currentUser?.uid
     }
     
     private func handleErrors(err : NSError, loginHandler : ((_ msg : String?) -> Void)?) {
-        if let errCode = FIRAuthErrorCode(rawValue: err.code) {
+        if let errCode = AuthErrorCode(rawValue: err.code) {
             switch errCode {
                 
-            case FIRAuthErrorCode.errorCodeUserNotFound:
+            case AuthErrorCode.userNotFound:
                 loginHandler!(AuthError.USER_NOT_FOUND)
                 break;
-            case FIRAuthErrorCode.errorCodeWrongPassword:
+            case AuthErrorCode.wrongPassword:
                 loginHandler!(AuthError.WRONG_PASSWORD)
                 break;
-            case FIRAuthErrorCode.errorCodeInvalidEmail:
+            case AuthErrorCode.invalidEmail:
                 loginHandler!(AuthError.INVALID_EMAIL)
                 break;
-            case FIRAuthErrorCode.errorCodeEmailAlreadyInUse:
+            case AuthErrorCode.emailAlreadyInUse:
                 loginHandler!(AuthError.EMAIL_ALREADY_USED)
                 break;
-            case FIRAuthErrorCode.errorCodeNetworkError:
+            case AuthErrorCode.networkError:
                 loginHandler!(AuthError.PROBLEM_CONNECTING)
                 break;
-            case FIRAuthErrorCode.errorCodeWeakPassword:
+            case AuthErrorCode.weakPassword:
                 loginHandler!(AuthError.WEAK_PASSWORD);
                 break;
             default:

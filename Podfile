@@ -13,4 +13,5 @@ target 'HearthApp' do
     pod 'Firebase/Database'
     pod 'Swinject'
     pod 'TextFieldEffects'
+    pod 'Charts'
 end

@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AddFriendsViewModelDelegate: class {
     func searchedUser(user: [User])
+    func setProfileInfo(image: UIImage)
 }
 
 
