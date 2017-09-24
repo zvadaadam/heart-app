@@ -6,6 +6,7 @@
 //  Copyright © 2017 Adam Zvada. All rights reserved.
 //
 
+import HealthKit
 import Foundation
 import UIKit
 
@@ -17,6 +18,7 @@ protocol ProfileViewModelProtocol: class {
 
 class ProfileViewModel {
     
+    var heartHandler: HeartHandler = HeartHandler.sharedInstance
     var userHandler: UserHandler = UserHandler.sharedInstance
     var authProvider: AuthProvider = AuthProvider.sharedInstance
     var healthManager: HealthKitManager = HealthKitManager.sharedInstance
@@ -65,4 +67,17 @@ class ProfileViewModel {
             })
         }
     }
+    
+//    func updateHeartData() {
+//        healthManager.readTodayRate(completion: { (heartSample, error) in
+//            heartSample[0].
+//            
+//            let heartBeats = (heartSample as! HKQuantitySample).quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute()))
+//            var heartRates = []
+//            for hearyNear in heartBeats {
+//                heartRates.append(HeartRate(rate: <#T##Double#>, timestamp: <#T##Int#>))
+//            }
+//            self.heartHandler.storeHeartRate(heartRates: )
+//        })
+//    }
 }

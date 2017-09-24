@@ -54,9 +54,12 @@ extension GraphViewController: UICollectionViewDataSource, UICollectionViewDeleg
         calendar.reloadData()
         
         let date = calendarModel.subtractDaysFromCurrent(days: indexPath.item)
+        
         print(String(date.day) + "-" + date.getMonthStr() + "-" + String(date.year))
         
-        getGraphOf(index: indexPath.item)
+        print(Date().getDate(day: date.day + 1, month: date.month, year: date.year))
+        
+        getGraphOfDate(date: Date().getDate(day: date.day + 1, month: date.month, year: date.year))
     }
     
     

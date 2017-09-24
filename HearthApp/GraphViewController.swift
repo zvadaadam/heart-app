@@ -26,6 +26,8 @@ class GraphViewController : UIViewController, ChartViewDelegate {
     
     var profileUsers: [FriendsSelectedView] = []
     
+    let viewModel: GraphViewModel = GraphViewModel()
+    
     var counter = 0
     let sampleFrequency = 5;
     
@@ -37,40 +39,45 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         calendar.register(UINib(nibName: "CalendarTodayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CalendarCellToday")
         
         graphView.delegate = self
+        viewModel.delegate = self
         
         //TODO, TMP MOCK!
-        let data = createMockData()
-        graphView.createLine(xData: data.x, yData: data.y, color: .red)
-        
-        let data1 = createMockData()
-        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
-        
-        let data2 = createMockData()
-        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
-        
-        let data3 = createMockData()
-        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
-        
+//        let data = createMockData()
+//        graphView.createLine(xData: data.x, yData: data.y, color: .red)
+//        
+//        let data1 = createMockData()
+//        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
+//        
+//        let data2 = createMockData()
+//        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
+//        
+//        let data3 = createMockData()
+//        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
+//        
         
         let user : [(String, UIColor)] = [("Mock1", .red), ("Mock2", .blue), ("Mock3", .white), ("Mock4", .yellow)]
         
         setUserProfiles(users: user);
     }
     
-    func getGraphOf(index: Int) {
+    func getGraphOfDate(date: Date) {
         graphView.clear()
-        
-        let data = createMockData()
-        graphView.createLine(xData: data.x, yData: data.y, color: .red)
-        
-        let data1 = createMockData()
-        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
 
-        let data2 = createMockData()
-        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
         
-        let data3 = createMockData()
-        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
+        viewModel.retriveHeartRates(date: date)
+        
+        
+//        let data = createMockData()
+//        graphView.createLine(xData: data.x, yData: data.y, color: .red)
+//
+//        let data1 = createMockData()
+//        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
+//
+//        let data2 = createMockData()
+//        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
+//
+//        let data3 = createMockData()
+//        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
 
     }
     
@@ -135,18 +142,29 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         counter += 1
         return (arc4random_uniform(150) + 40)
     }
-    
-    
 }
 
-extension UIView {
-    func fadeTransition(_ duration:CFTimeInterval) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name:
-            kCAMediaTimingFunctionEaseInEaseOut)
-        animation.type = kCATransitionFade
-        animation.duration = duration
-        layer.add(animation, forKey: kCATransitionFade)
+extension GraphViewController: GraphViewModelDelegate {
+    
+    func retrivedHeartRates(date: Date, heartRates: [HeartRate]) {
+        graphView.clear()
+        
+        var x : [Int] = []
+        var y : [Int] = []
+        
+        for heartRate in heartRates {
+            x.append(Int(heartRate.rate!))
+            print(heartRate.timestamp)
+            let timestamp = Int(date.startOfDay.timeIntervalSince1970 - heartRate.timestamp!)/60
+            y.append(timestamp)
+        }
+        
+        graphView.createLine(xData: y, yData: x, color: .red)
     }
 }
+
+
+
+
+
 

@@ -18,8 +18,7 @@ class HealthKitManager : NSObject {
     
     let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     
-    let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)
-    
+    let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierEndDate, ascending: false)
     
     func authorizeHealthKit(completion:((_ mySuccess : Bool, _ myError : Error?) -> Void)!) {
         
@@ -31,7 +30,6 @@ class HealthKitManager : NSObject {
                 completion(success, error)
             }
         }
-        return
     }
     
     
@@ -40,28 +38,54 @@ class HealthKitManager : NSObject {
         let predicate = HKQuery.predicateForSamples(withStart: from, end: to)
         
         let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { (sampleQuery, results, error) -> Void in
+            
+            print(from)
+            print(to)
+            
+            print(results![0])
+            
             if let queryError = error {
                 completion([], queryError as NSError)
                 return
             }
             
+            for beat in results! {
+                print("\(beat.startDate) VS  \(beat.endDate)")
+                print(beat.startDate)
+                let hBeat = beat as! HKQuantitySample
+                print(hBeat.quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute())))
+            }
+            
             if let sample = results {
                 completion(sample, nil)
             }
-            //            for beat in results! {
-            //                let hBeat = beat as! HKQuantitySample
-            //
-            //                print(hBeat.quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute())))
-            //            }
         }
-        
         healthKitStore.execute(sampleQuery);
     }
     
+    func readHeartRateEntity(from: Date, to: Date, completion: @escaping ([HeartRate], NSError?) -> Void) {
+        self.readHeartRate(from: from, to: to) { (result, error) in
+            if error != nil {
+                completion([], nil)
+            }
+            
+            var heartRate: [HeartRate] = []
+            
+            for beatSample in result {
+                print("\(beatSample.startDate) VS  \(beatSample.endDate)")
+                let beatValaue = (beatSample as! HKQuantitySample).quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute()))
+                let beat = HeartRate(rate: beatValaue, timestamp: Double(beatSample.startDate.timeIntervalSince1970))
+                heartRate.append(beat)
+            }
+            
+            completion(heartRate, nil)
+        }
+    }
+    
     func readTodayRate(completion: @escaping ([HKSample], NSError?) -> Void) {
-            let yeasterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-            print(yeasterday!)
-            print(Date())
+        let yeasterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        print(yeasterday!)
+        print(Date())
         
         readHeartRate(from: yeasterday!, to: Date()) { (results, error) in
             if let queryError = error {
@@ -71,8 +95,6 @@ class HealthKitManager : NSObject {
             completion(results, nil)
         }
     }
-    
-    
 }
 
 

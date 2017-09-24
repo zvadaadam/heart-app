@@ -65,6 +65,9 @@
 		C59792C31F7042ED0018FE16 /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59792C21F7042ED0018FE16 /* AddFriendsCell.swift */; };
 		C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */; };
 		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
+		C5FA09F91F77FAA4001788D9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */; };
+		C5FA09FB1F784A67001788D9 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09FA1F784A67001788D9 /* GraphViewModel.swift */; };
+		C5FA09FD1F784ABE001788D9 /* UIview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -144,6 +147,9 @@
 		C59792C21F7042ED0018FE16 /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsCell.swift; sourceTree = "<group>"; };
 		C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C5FA09FA1F784A67001788D9 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,24 +337,25 @@
 				C53AC7C31F5984540067B8F8 /* profile */,
 				C53AC7B51F4981720067B8F8 /* selectfriends */,
 				C592ED241F38CE1700902383 /* addfriend */,
-				C591C1831F2A09EA00F9E448 /* main */,
+				C591C1831F2A09EA00F9E448 /* graph */,
 				C58C414F1F19871400507911 /* LaunchViewController.swift */,
 				C5642EF51F1B93C5005363A0 /* FriendsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		C591C1831F2A09EA00F9E448 /* main */ = {
+		C591C1831F2A09EA00F9E448 /* graph */ = {
 			isa = PBXGroup;
 			children = (
 				C5642F051F1D3C16005363A0 /* GraphViewController.swift */,
+				C5FA09FA1F784A67001788D9 /* GraphViewModel.swift */,
 				C591C1881F2A2C1500F9E448 /* CalenderCollectionDelegate.swift */,
 				C591C1841F2A2BB600F9E448 /* CalendarCollectionViewCell.swift */,
 				C591C1851F2A2BB600F9E448 /* CalendarCollectionViewCell.xib */,
 				C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */,
 				C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */,
 			);
-			name = main;
+			name = graph;
 			sourceTree = "<group>";
 		};
 		C591C18A1F2A2F9300F9E448 /* calendar */ = {
@@ -368,6 +375,8 @@
 				C596C02A1F5C39D600004DF6 /* UIButton+Extension.swift */,
 				C596C02E1F5C411B00004DF6 /* PresentStoryboard.swift */,
 				C5345AC21F711061009463A9 /* UIViewController+Extension.swift */,
+				C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */,
+				C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -575,6 +584,7 @@
 				C5642EF91F1BC18E005363A0 /* DBProvider.swift in Sources */,
 				C53AC7B81F4981870067B8F8 /* SelectFriendsViewController.swift in Sources */,
 				C53AC7C21F574DC60067B8F8 /* FriendsHandler.swift in Sources */,
+				C5FA09F91F77FAA4001788D9 /* Date+Extension.swift in Sources */,
 				C591C18C1F2A2FA400F9E448 /* CalendarModel.swift in Sources */,
 				C591C1891F2A2C1500F9E448 /* CalenderCollectionDelegate.swift in Sources */,
 				C596C02B1F5C39D600004DF6 /* UIButton+Extension.swift in Sources */,
@@ -585,6 +595,7 @@
 				C53AC7CB1F5986B70067B8F8 /* ProfileViewController.swift in Sources */,
 				C53847651F2BEDF7006B7711 /* CalendarDate.swift in Sources */,
 				C58C41501F19871400507911 /* LaunchViewController.swift in Sources */,
+				C5FA09FB1F784A67001788D9 /* GraphViewModel.swift in Sources */,
 				C53AC7C01F574BCC0067B8F8 /* UserHandler.swift in Sources */,
 				C52478641F71E08900309561 /* HealthKitManager.swift in Sources */,
 				C592ED1E1F33C35800902383 /* UIImageView+Extension.swift in Sources */,
@@ -601,6 +612,7 @@
 				C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */,
 				C53AC7BE1F574AA30067B8F8 /* User.swift in Sources */,
 				C5642EF41F1B7A76005363A0 /* Constants.swift in Sources */,
+				C5FA09FD1F784ABE001788D9 /* UIview+Extension.swift in Sources */,
 				C55101AA1F238F6600B2EC8A /* CurrentRateView.swift in Sources */,
 				C50997901F1E93DB0073F600 /* GraphLineView.swift in Sources */,
 			);
