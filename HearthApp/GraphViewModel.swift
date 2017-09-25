@@ -20,10 +20,15 @@ class GraphViewModel {
     weak var delegate: GraphViewModelDelegate?
     
     func retriveHeartRates(date: Date) {
-        let beginOfDay = date.startOfDay.timeIntervalSince1970
-        let endOfDay = date.endOfDay?.timeIntervalSince1970
+    
+        let beginOfDay = TimeZoneHelper.firebaseDate(date: date.startOfDay).timeIntervalSince1970
+        let endOfDay = TimeZoneHelper.firebaseDate(date: date.endOfDay!).timeIntervalSince1970
         
-        heartHandler.loadHeartRate(fromTimestamp: beginOfDay, toTimestamp: endOfDay!) { (heartRates) in
+        //DEBUG
+        print("Retriving HR for graph...")
+        print("Date starting at \(Date(timeIntervalSince1970: beginOfDay))")
+        
+        heartHandler.loadHeartRate(fromTimestamp: beginOfDay, toTimestamp: endOfDay) { (heartRates) in
             self.delegate?.retrivedHeartRates(date: date, heartRates: heartRates)
         }
     }

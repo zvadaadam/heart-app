@@ -43,7 +43,10 @@ class LoginViewController: UIViewController {
                     } else {
                         print("LOGIN SUCSESS")
                         
-                        HeartHandler.sharedInstance.storeHeartRateInTime(fromTimestamp:  (Calendar.current.date(byAdding: .day, value: -1, to: Date())?.timeIntervalSince1970)!, toTimestamp: Date().timeIntervalSince1970)
+//                        HeartHandler.sharedInstance.storeHeartRateInTime(fromTimestamp:  (Calendar.current.date(byAdding: .day, value: -1, to: Date())?.timeIntervalSince1970)!, toTimestamp: Date().timeIntervalSince1970)
+                        
+                        HeartHandler.sharedInstance.storePossibleHeartRateInTime(fromTimestamp:  (Calendar.current.date(byAdding: .day, value: -1, to: Date())?.timeIntervalSince1970)!, toTimestamp: Date().timeIntervalSince1970)
+
                         
                         //TODO
                         PresentStoryboard.sharedInstance.showProfile(vc: self)

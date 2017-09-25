@@ -17,21 +17,23 @@ class HeartHandler {
     
     func storeHeartRate(heartRates: [HeartRate]) {
         for heartRate in heartRates {
-            if let timestamp = heartRate.timestamp, let rate = heartRate.rate {
-                dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).child(String(timestamp)).setValue(rate)
-            }
+            dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).child(String(heartRate.timestamp)).setValue(heartRate.rate)
         }
     }
     
     
     func storePossibleHeartRateInTime(fromTimestamp: Double, toTimestamp: Double) {
         lastHeartRate { (lastHeartRate) in
-            var newFromTimestamp = fromTimestamp
-            if let lastUpload = lastHeartRate.timestamp {
-                if lastUpload > fromTimestamp {
-                    newFromTimestamp = lastUpload
-                }
+            guard let lastHR = lastHeartRate else {
+                self.storeHeartRateInTime(fromTimestamp: fromTimestamp, toTimestamp: toTimestamp)
+                return
             }
+            
+            var newFromTimestamp = fromTimestamp
+            if lastHR.timestamp > fromTimestamp {
+                newFromTimestamp = lastHR.timestamp
+            }
+            
             
             if newFromTimestamp < toTimestamp {
                 self.storeHeartRateInTime(fromTimestamp: newFromTimestamp, toTimestamp: toTimestamp)
@@ -41,21 +43,29 @@ class HeartHandler {
     
     func storeHeartRateInTime(fromTimestamp: Double, toTimestamp: Double) {
         healthManager.readHeartRateEntity(from: Date(timeIntervalSince1970: fromTimestamp), to: Date(timeIntervalSince1970: toTimestamp)) { (heartRates, error) in
+            //DEBUG
+            print("Storing to Firebase...")
             for heartRate in heartRates {
-                if let timestamp = heartRate.timestamp, let rate = heartRate.rate {
-                    self.dbProvider.heartOfUserRef(UID: self.authProvide.currentUID()!).child(String(Int(timestamp))).setValue(rate)
-                }
+                let date = Date(timeIntervalSince1970: heartRate.timestamp)
+                print("\(date) and HR: \(heartRate.rate)")
+                self.dbProvider.heartOfUserRef(UID: self.authProvide.currentUID()!).child(String(Int(heartRate.timestamp))).setValue(heartRate.rate)
             }
         }
     }
     
     func loadHeartRate(fromTimestamp: Double, toTimestamp: Double, complition: @escaping ([HeartRate]) -> Void) {
-        dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).queryOrderedByKey().queryStarting(atValue: String(1506268568)).queryEnding(atValue: String(1506268882)).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).queryOrderedByKey().queryStarting(atValue: String(Int(fromTimestamp))).queryEnding(atValue: String(Int(toTimestamp))).observeSingleEvent(of: .value, with: { (snapshot) in
+            //DEBUG
+            print("Loading heart data from Firebase...")
+            print("From \(Date(timeIntervalSince1970: fromTimestamp)) to \(Date(timeIntervalSince1970: toTimestamp))")
+            
             var hearRates: [HeartRate] = []
             if let dictionary = snapshot.value as? [String : Any] {
                 for (key, value) in dictionary {
                     if let timestamp = Double(key), let rate = value as? Double {
                         let heartRate = HeartRate(rate: rate, timestamp: timestamp)
+                        print("\(Date(timeIntervalSince1970: timestamp)) and HR: \(rate)")
                         hearRates.append(heartRate)
                     }
                 }
@@ -64,15 +74,17 @@ class HeartHandler {
         }, withCancel: nil)
     }
     
-    func lastHeartRate(complition: @escaping (HeartRate) -> Void) {
-        dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? (String, Any) {
-                print(dictionary)
-            }
-            
-            if let (key, value) = snapshot.value as? (Double, Double) {
-                complition(HeartRate(rate: key, timestamp: value))
+    func lastHeartRate(complition: @escaping ((HeartRate?) -> Void)) {
+        dbProvider.heartOfUserRef(UID: authProvide.currentUID()!).queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+            if let dictionary = snapshot.value as? [String: Any] {
+                if let lastHR = dictionary.first {
+                    complition(HeartRate(rate: (lastHR.value as? Double)!, timestamp: Double(lastHR.key)!))
+                } else {
+                    complition(nil)
+                }
+            } else {
+                complition(nil)
             }
         })
     }

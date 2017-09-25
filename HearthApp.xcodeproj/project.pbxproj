@@ -65,6 +65,7 @@
 		C59792C31F7042ED0018FE16 /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59792C21F7042ED0018FE16 /* AddFriendsCell.swift */; };
 		C5BA8E451F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */; };
 		C5BA8E461F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */; };
+		C5EE15B21F79BE4E00227536 /* TimeZoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE15B11F79BE4E00227536 /* TimeZoneHelper.swift */; };
 		C5FA09F91F77FAA4001788D9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */; };
 		C5FA09FB1F784A67001788D9 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09FA1F784A67001788D9 /* GraphViewModel.swift */; };
 		C5FA09FD1F784ABE001788D9 /* UIview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */; };
@@ -147,6 +148,7 @@
 		C59792C21F7042ED0018FE16 /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsCell.swift; sourceTree = "<group>"; };
 		C5BA8E431F2A56E300EBF682 /* CalendarTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5BA8E441F2A56E300EBF682 /* CalendarTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C5EE15B11F79BE4E00227536 /* TimeZoneHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneHelper.swift; sourceTree = "<group>"; };
 		C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		C5FA09FA1F784A67001788D9 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Extension.swift"; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				C5345AC21F711061009463A9 /* UIViewController+Extension.swift */,
 				C5FA09F81F77FAA4001788D9 /* Date+Extension.swift */,
 				C5FA09FC1F784ABE001788D9 /* UIview+Extension.swift */,
+				C5EE15B11F79BE4E00227536 /* TimeZoneHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				C596C02F1F5C411B00004DF6 /* PresentStoryboard.swift in Sources */,
 				C59792BF1F70355F0018FE16 /* AddFriendsViewModel.swift in Sources */,
 				C52478571F716CF000309561 /* CircleImageView.swift in Sources */,
+				C5EE15B21F79BE4E00227536 /* TimeZoneHelper.swift in Sources */,
 				C5642EED1F1AC58B005363A0 /* AuthProvider.swift in Sources */,
 				C58C41391F1950EA00507911 /* AppDelegate.swift in Sources */,
 				C591C1861F2A2BB600F9E448 /* CalendarCollectionViewCell.swift in Sources */,

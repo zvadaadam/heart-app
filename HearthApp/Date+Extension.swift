@@ -21,6 +21,10 @@ extension Date {
         return Calendar.current.date(byAdding: components, to: startOfDay)
     }
     
+    var localIntervalTime: Double {
+        return (Double(NSTimeZone.system.secondsFromGMT()) + self.timeIntervalSince1970)
+    }
+    
     func dateWithTimezone(format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
@@ -38,7 +42,6 @@ extension Date {
         component.second = 0
         
         print(Calendar.current.date(from: component)!)
-        
         return Calendar.current.date(from: component)!
     }
     

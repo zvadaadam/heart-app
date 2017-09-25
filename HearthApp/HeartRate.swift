@@ -10,8 +10,8 @@ import Foundation
 
 class HeartRate {
     
-    var timestamp: Double?
-    var rate: Double?
+    var timestamp: Double
+    var rate: Double
     
     init(rate: Double, timestamp: Double) {
         self.rate = rate

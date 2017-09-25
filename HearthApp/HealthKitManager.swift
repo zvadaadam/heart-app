@@ -24,7 +24,6 @@ class HealthKitManager : NSObject {
         
         let HKTypesToRead = Set([HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]);
         
-        
         healthKitStore.requestAuthorization(toShare: nil, read: HKTypesToRead){ (success, error) -> Void in
             if completion != nil {
                 completion(success, error)
@@ -39,22 +38,17 @@ class HealthKitManager : NSObject {
         
         let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { (sampleQuery, results, error) -> Void in
             
-            print(from)
-            print(to)
-            
-            print(results![0])
-            
             if let queryError = error {
                 completion([], queryError as NSError)
                 return
             }
             
-            for beat in results! {
-                print("\(beat.startDate) VS  \(beat.endDate)")
-                print(beat.startDate)
-                let hBeat = beat as! HKQuantitySample
-                print(hBeat.quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute())))
-            }
+//            for beat in results! {
+//                print("\(beat.startDate) VS  \(beat.endDate)")
+//                print(beat.startDate)
+//                let hBeat = beat as! HKQuantitySample
+//                print(hBeat.quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute())))
+//            }
             
             if let sample = results {
                 completion(sample, nil)
@@ -69,10 +63,13 @@ class HealthKitManager : NSObject {
                 completion([], nil)
             }
             
+            //DEBUG
+            print("READING HEART DATA from \(from) to \(to)")
+            print("Number of HeartData = \(result.count)")
+            
             var heartRate: [HeartRate] = []
             
             for beatSample in result {
-                print("\(beatSample.startDate) VS  \(beatSample.endDate)")
                 let beatValaue = (beatSample as! HKQuantitySample).quantity.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute()))
                 let beat = HeartRate(rate: beatValaue, timestamp: Double(beatSample.startDate.timeIntervalSince1970))
                 heartRate.append(beat)

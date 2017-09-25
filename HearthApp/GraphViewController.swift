@@ -42,18 +42,18 @@ class GraphViewController : UIViewController, ChartViewDelegate {
         viewModel.delegate = self
         
         //TODO, TMP MOCK!
-//        let data = createMockData()
-//        graphView.createLine(xData: data.x, yData: data.y, color: .red)
-//        
-//        let data1 = createMockData()
-//        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
-//        
-//        let data2 = createMockData()
-//        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
-//        
-//        let data3 = createMockData()
-//        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
-//        
+        let data = createMockData()
+        graphView.createLine(xData: data.x, yData: data.y, color: .red)
+        
+        let data1 = createMockData()
+        graphView.createLine(xData: data1.x, yData: data1.y, color: .blue)
+        
+        let data2 = createMockData()
+        graphView.createLine(xData: data2.x, yData: data2.y, color: .yellow)
+        
+        let data3 = createMockData()
+        graphView.createLine(xData: data3.x, yData: data3.y, color: .white)
+        
         
         let user : [(String, UIColor)] = [("Mock1", .red), ("Mock2", .blue), ("Mock3", .white), ("Mock4", .yellow)]
         
@@ -152,11 +152,14 @@ extension GraphViewController: GraphViewModelDelegate {
         var x : [Int] = []
         var y : [Int] = []
         
+        let timestampStartOfDayLocal = TimeZoneHelper.localDate(date: date.startOfDay).timeIntervalSince1970
+        print(timestampStartOfDayLocal)
+        
         for heartRate in heartRates {
-            x.append(Int(heartRate.rate!))
+            x.append(Int(heartRate.rate))
             print(heartRate.timestamp)
-            let timestamp = Int(date.startOfDay.timeIntervalSince1970 - heartRate.timestamp!)/60
-            y.append(timestamp)
+            let minutesFromNoon = Int(timestampStartOfDayLocal - TimeZoneHelper.localDate(timestamp: heartRate.timestamp))/60
+            y.append(minutesFromNoon)
         }
         
         graphView.createLine(xData: y, yData: x, color: .red)
